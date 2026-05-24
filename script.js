@@ -1,103 +1,153 @@
-const startBtn = document.getElementById("startBtn");
+const typing =
+document.getElementById("typing");
 
-const screen1 = document.getElementById("screen1");
-const screen2 = document.getElementById("screen2");
-const screen3 = document.getElementById("screen3");
-const screen4 = document.getElementById("screen4");
+const text = `
+24 de dezembro de 2025...
 
-const stars = document.querySelectorAll(".star");
+eu ainda não sabia...
+mas naquele dia
+eu encontraria alguém
+que mudaria tudo ❤️
+`;
 
-const modal = document.getElementById("modal");
-const modalText = document.getElementById("modalText");
+let i = 0;
 
-const closeBtn = document.getElementById("closeBtn");
-const closeModal = document.getElementById("closeModal");
+function escrever(){
 
-const specialStar = document.getElementById("specialStar");
+  if(i < text.length){
 
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
+    typing.innerHTML += text.charAt(i);
 
-const noMessage = document.getElementById("noMessage");
+    i++;
 
-const starNumber = document.getElementById("starNumber");
+    setTimeout(escrever,50);
 
-let opened = 0;
+  }
 
-/* COMEÇAR */
-startBtn.addEventListener("click", () => {
+}
+
+escrever();
+
+/* TELAS */
+const screen1 =
+document.getElementById("screen1");
+
+const screen2 =
+document.getElementById("screen2");
+
+const screen3 =
+document.getElementById("screen3");
+
+const screen4 =
+document.getElementById("screen4");
+
+const countScreen =
+document.getElementById("countScreen");
+
+const proposalScreen =
+document.getElementById("proposalScreen");
+
+const finalScreen =
+document.getElementById("finalScreen");
+
+/* BOTÕES */
+document.getElementById("startBtn")
+.addEventListener("click", () => {
 
   screen1.classList.remove("active");
+
   screen2.classList.add("active");
 
 });
 
-/* ESTRELAS */
-stars.forEach((star) => {
+document.getElementById("next1")
+.addEventListener("click", () => {
 
-  star.addEventListener("click", () => {
+  screen2.classList.remove("active");
 
-    /* ESPECIAL */
-    if(star.classList.contains("special")){
-
-      if(opened >= 3){
-
-        screen2.classList.remove("active");
-        screen3.classList.add("active");
-
-      }else{
-
-        alert("abra as outras estrelas primeiro ❤️");
-
-      }
-
-      return;
-    }
-
-    modal.classList.remove("hidden");
-
-    modalText.innerText = star.dataset.text;
-
-    starNumber.innerText = star.dataset.id;
-
-    if(!star.classList.contains("opened")){
-
-      star.classList.add("opened");
-
-      star.style.opacity = "0.4";
-
-      opened++;
-
-    }
-
-  });
+  screen3.classList.add("active");
 
 });
 
-/* FECHAR */
-closeBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
-
-closeModal.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
-
-/* SIM */
-yesBtn.addEventListener("click", () => {
+document.getElementById("next2")
+.addEventListener("click", () => {
 
   screen3.classList.remove("active");
+
   screen4.classList.add("active");
+
+});
+
+document.getElementById("countBtn")
+.addEventListener("click", () => {
+
+  screen4.classList.remove("active");
+
+  countScreen.classList.add("active");
+
+  iniciarContagem();
+
+});
+
+/* CONTAGEM */
+function iniciarContagem(){
+
+  const count =
+  document.getElementById("count");
+
+  let numero = 3;
+
+  const intervalo =
+  setInterval(() => {
+
+    numero--;
+
+    if(numero > 0){
+
+      count.innerHTML = numero;
+
+    }else{
+
+      clearInterval(intervalo);
+
+      count.innerHTML = "❤️";
+
+      setTimeout(() => {
+
+        countScreen.classList.remove("active");
+
+        proposalScreen.classList.add("active");
+
+        document.getElementById("music")
+        .play()
+        .catch(() => {});
+
+      },1500);
+
+    }
+
+  },1000);
+
+}
+
+/* SIM */
+document.getElementById("yesBtn")
+.addEventListener("click", () => {
+
+  proposalScreen.classList.remove("active");
+
+  finalScreen.classList.add("active");
 
   chuva();
 
 });
 
 /* NÃO */
-noBtn.addEventListener("click", () => {
+document.getElementById("noBtn")
+.addEventListener("click", () => {
 
-  noMessage.innerHTML = `
-  <br>
+  document.getElementById("noText")
+  .innerHTML = `
   talvez você ainda não esteja pronta...
   <br><br>
   e eu respeito totalmente isso ❤️
@@ -110,34 +160,39 @@ function chuva(){
 
   setInterval(() => {
 
-    const heart = document.createElement("div");
+    const heart =
+    document.createElement("div");
 
     heart.innerHTML = "💖";
 
     heart.style.position = "fixed";
 
-    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.left =
+    Math.random() * 100 + "vw";
 
     heart.style.top = "-20px";
 
-    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    heart.style.fontSize =
+    Math.random() * 20 + 20 + "px";
 
-    heart.style.pointerEvents = "none";
-
-    heart.style.animation = "fall 4s linear forwards";
+    heart.style.animation =
+    "fall 4s linear forwards";
 
     document.body.appendChild(heart);
 
     setTimeout(() => {
+
       heart.remove();
+
     },4000);
 
-  },200);
+  },250);
 
 }
 
 /* ANIMAÇÃO */
-const style = document.createElement("style");
+const style =
+document.createElement("style");
 
 style.innerHTML = `
 @keyframes fall{

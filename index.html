@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Para Você ❤️</title>
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
   <!-- FUNDO -->
   <div class="background"></div>
-  <div class="overlay"></div>
+  <div class="particles"></div>
 
-  <!-- CORAÇÕES -->
-  <div class="hearts"></div>
+  <!-- MÚSICA -->
+  <audio id="music" loop>
+    <source src="musica.mp3" type="audio/mp3">
+  </audio>
 
   <!-- TELA 1 -->
   <section class="screen active" id="screen1">
 
-    <div class="glass intro-card">
+    <div class="glass">
 
-      <div class="heart-icon">♡</div>
-
-      <h1>
-        tem algumas coisas que eu
-        nunca consegui te explicar
-        direito...
-      </h1>
+      <h1 id="typing"></h1>
 
       <button id="startBtn">
-        descobrir ✨
+        continuar ✨
       </button>
 
     </div>
@@ -41,114 +39,130 @@
   <!-- TELA 2 -->
   <section class="screen" id="screen2">
 
-    <h1 class="title">
-      toque nas estrelas 💗
-    </h1>
+    <div class="glass movie-card">
 
-    <div class="stars-container">
+      <img src="filme.jpg" class="movie-img">
 
-      <div class="star" data-id="1"
-      data-text="você virou a parte mais leve dos meus dias ✨">
-        ☆
-      </div>
+      <h2>The 5th Wave 🎬</h2>
 
-      <div class="star" data-id="2"
-      data-text="você me faz sorrir mesmo nos dias ruins 💜">
-        ☆
-      </div>
+      <p>
+        talvez fosse só um filme...
+        <br><br>
 
-      <div class="star" data-id="3"
-      data-text="eu comecei a imaginar um futuro bonito com você ❤️">
-        ☆
-      </div>
+        mas eu lembro dele
+        porque lembro de você ❤️
+      </p>
 
-      <div class="star special" id="specialStar">
-        ☆
-      </div>
+      <button id="next1">
+        continuar
+      </button>
 
     </div>
 
-    <!-- MODAL -->
-    <div class="modal hidden" id="modal">
+  </section>
 
-      <div class="glass modal-card">
+  <!-- TELA 3 -->
+  <section class="screen" id="screen3">
 
-        <button class="close" id="closeBtn">
-          ×
-        </button>
+    <div class="glass photo-card">
 
-        <div class="star-number" id="starNumber">
-          1
-        </div>
+      <img src="foto.jpg" class="couple-img">
 
-        <p id="modalText"></p>
+      <p>
+        e mesmo sendo só uma imagem...
+        <br><br>
 
-        <button class="pink-btn" id="closeModal">
-          fechar
-        </button>
+        eu conseguia imaginar
+        nós dois de verdade ✨
+      </p>
 
-      </div>
+      <button id="next2">
+        continuar
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- TELA 4 -->
+  <section class="screen" id="screen4">
+
+    <div class="glass text-card">
+
+      <h1>
+        e no meio de tudo isso...
+      </h1>
+
+      <p>
+        você virou meu lugar favorito ❤️
+      </p>
+
+      <button id="countBtn">
+        tem mais uma coisa...
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- CONTAGEM -->
+  <section class="screen" id="countScreen">
+
+    <div class="count-container">
+
+      <p>
+        faltam poucos segundos
+        pro meu dia dos namorados perfeito acontecer...
+      </p>
+
+      <h1 id="count">
+        3
+      </h1>
 
     </div>
 
   </section>
 
   <!-- PEDIDO -->
-  <section class="screen" id="screen3">
+  <section class="screen" id="proposalScreen">
 
     <div class="glass proposal-card">
 
-      <div class="heart-icon">♡</div>
-
-      <h2>
-        e foi aí que eu percebi...
-      </h2>
-
-      <p class="proposal-text">
-        que eu não queria sentir tudo isso sozinho ❤️
-      </p>
-
       <h1 class="proposal-title">
-        Quer namorar comigo?
+        Quer namorar comigo? ❤️
       </h1>
 
       <div class="buttons">
 
-        <button class="yes-btn" id="yesBtn">
+        <button id="yesBtn">
           SIM 💗
         </button>
 
-        <button class="no-btn" id="noBtn">
+        <button id="noBtn">
           NÃO 🥺
         </button>
 
       </div>
 
-      <div id="noMessage"></div>
+      <p id="noText"></p>
 
     </div>
 
   </section>
 
   <!-- FINAL -->
-  <section class="screen" id="screen4">
+  <section class="screen" id="finalScreen">
 
     <div class="glass final-card">
-
-      <div class="heart-icon">♡</div>
 
       <h1>
         você disse sim 💜
       </h1>
 
       <p>
-        agora oficialmente você é
-        a melhor parte da minha vida ✨
+        agora oficialmente
+        meu dia dos namorados ficou perfeito ✨
       </p>
-
-      <audio controls autoplay loop>
-        <source src="musica.mp3" type="audio/mp3">
-      </audio>
 
     </div>
 
