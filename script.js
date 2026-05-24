@@ -65,6 +65,7 @@ document.getElementById("startBtn")
 
 });
 
+/* FILME -> FOTO */
 document.getElementById("next1")
 .addEventListener("click", () => {
 
@@ -72,8 +73,33 @@ document.getElementById("next1")
 
   screen3.classList.add("active");
 
+  /* COMEÇA A MÚSICA */
+  music.volume = 0;
+
+  music.play().catch(() => {});
+
+  /* FADE IN */
+  let volume = 0;
+
+  const fade = setInterval(() => {
+
+    if(volume < 0.5){
+
+      volume += 0.05;
+
+      music.volume = volume;
+
+    }else{
+
+      clearInterval(fade);
+
+    }
+
+  },200);
+
 });
 
+/* FOTO -> TEXTO */
 document.getElementById("next2")
 .addEventListener("click", () => {
 
@@ -83,7 +109,7 @@ document.getElementById("next2")
 
 });
 
-/* BOTÃO CONTAGEM */
+/* TEXTO -> CONTAGEM */
 document.getElementById("countBtn")
 .addEventListener("click", () => {
 
@@ -101,75 +127,54 @@ function iniciarContagem(){
   const count =
   document.getElementById("count");
 
-  /* TEXTO ANTES */
-  const texto =
-  document.querySelector(".count-container p");
+  let numero = 3;
 
-  texto.innerHTML = `
-  essa música sempre me lembrou você...
-  `;
+  const intervalo =
+  setInterval(() => {
 
-  /* PEQUENO SILÊNCIO */
-  setTimeout(() => {
+    numero--;
 
-    let numero = 3;
+    if(numero > 0){
 
-    count.innerHTML = numero;
+      count.innerHTML = numero;
 
-    const intervalo =
-    setInterval(() => {
+    }else{
 
-      numero--;
+      clearInterval(intervalo);
 
-      if(numero > 0){
+      count.innerHTML = "❤️";
 
-        count.innerHTML = numero;
+      /* MÚSICA AUMENTA */
+      let volume = music.volume;
 
-      }else{
+      const fade =
+      setInterval(() => {
 
-        clearInterval(intervalo);
+        if(volume < 1){
 
-        count.innerHTML = "❤️";
+          volume += 0.05;
 
-        /* COMEÇA A MÚSICA */
-        music.volume = 0;
+          music.volume = volume;
 
-        music.play().catch(() => {});
+        }else{
 
-        /* FADE IN */
-        let volume = 0;
+          clearInterval(fade);
 
-        const fade =
-        setInterval(() => {
+        }
 
-          if(volume < 1){
+      },200);
 
-            volume += 0.05;
+      setTimeout(() => {
 
-            music.volume = volume;
+        countScreen.classList.remove("active");
 
-          }else{
+        proposalScreen.classList.add("active");
 
-            clearInterval(fade);
+      },1500);
 
-          }
+    }
 
-        },200);
-
-        /* ABRE PEDIDO */
-        setTimeout(() => {
-
-          countScreen.classList.remove("active");
-
-          proposalScreen.classList.add("active");
-
-        },1500);
-
-      }
-
-    },1000);
-
-  },2000);
+  },1000);
 
 }
 
@@ -198,7 +203,7 @@ document.getElementById("noBtn")
 
 });
 
-/* CHUVA DE CORAÇÕES */
+/* CHUVA */
 function chuva(){
 
   setInterval(() => {

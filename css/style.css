@@ -114,6 +114,8 @@ body{
 
   box-shadow:
   0 0 35px rgba(255,0,140,0.2);
+
+  animation:fade 1s ease;
 }
 
 /* TEXTO */
@@ -125,6 +127,7 @@ h1{
 
 h2{
   margin-top:10px;
+  font-size:1.5rem;
 }
 
 p{
@@ -256,6 +259,10 @@ button:hover{
 
   h1{
     font-size:1.5rem;
+  }
+
+  h2{
+    font-size:1.2rem;
   }
 
   p{
