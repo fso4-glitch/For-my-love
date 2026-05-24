@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Pedido de Namoro ❤️</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
   <!-- ESTRELAS -->
@@ -15,10 +18,19 @@
   <!-- TELA 1 -->
   <section class="screen active" id="screen1">
     <div class="glass-card fade-up">
-      <h1>Tenho algo muito especial pra te mostrar ❤️</h1>
-      <p>clica aqui e confia em mim ✨</p>
 
-      <button id="openBtn">Abrir</button>
+      <h1>
+        Tenho algo muito especial pra te mostrar ❤️
+      </h1>
+
+      <p>
+        clica aqui e confia em mim ✨
+      </p>
+
+      <button id="openBtn">
+        Abrir
+      </button>
+
     </div>
   </section>
 
@@ -26,27 +38,56 @@
   <section class="screen" id="screen2">
     <div class="glass-card romantic-card fade-up">
 
-      <img src="foto.jpg" alt="Nossa foto" class="photo" />
+      <!-- FOTO -->
+      <img
+        src="foto.jpg"
+        alt="Nossa foto"
+        class="photo"
+      />
 
+      <!-- TEXTO -->
       <p class="romantic-text">
-        Desde que você apareceu... <br><br>
+        Desde que você apareceu...
+        <br><br>
 
-        meus dias ficaram mais leves, <br>
-        meus sorrisos mais sinceros <br>
-        e meu coração começou a imaginar <br>
+        meus dias ficaram mais leves,
+        <br>
+
+        meus sorrisos mais sinceros
+        <br>
+
+        e meu coração começou a imaginar
+        <br>
+
         um futuro bonito ao seu lado ❤️
       </p>
 
-      <h2 class="question">Quer namorar comigo?</h2>
+      <!-- PERGUNTA -->
+      <h2 class="question">
+        Quer namorar comigo?
+      </h2>
 
+      <!-- BOTÕES -->
       <div class="buttons">
-        <button class="yes-btn" id="yesBtn">SIM 💗</button>
-        <button class="no-btn" id="noBtn">NÃO 🥺</button>
+
+        <button class="yes-btn" id="yesBtn">
+          SIM 💗
+        </button>
+
+        <button class="no-btn" id="noBtn">
+          NÃO 🥺
+        </button>
+
       </div>
 
+      <!-- MENSAGEM NÃO -->
       <p class="no-message" id="noMessage">
-        talvez você ainda não esteja pronta... <br>
-        e eu respeito totalmente isso. <br>
+        talvez você ainda não esteja pronta...
+        <br>
+
+        e eu respeito totalmente isso.
+        <br>
+
         o carinho que sinto por você continua aqui ✨
       </p>
 
@@ -57,27 +98,37 @@
   <section class="screen" id="screen3">
     <div class="glass-card final-card fade-up">
 
-      <h1 class="yes-title">Você disse sim 💜</h1>
+      <h1 class="yes-title">
+        Você disse sim 💜
+      </h1>
 
       <p class="final-text">
-        desde o momento que você entrou na minha vida,
-        meus dias ficaram mais bonitos. <br><br>
 
-        teu sorriso tem um jeito de acalmar tudo. <br><br>
+        desde o momento que você entrou na minha vida,
+        meus dias ficaram mais bonitos.
+        <br><br>
+
+        teu sorriso tem um jeito de acalmar tudo.
+        <br><br>
 
         eu não quero viver só momentos bonitos com você...
-        quero viver uma história inteira. <br><br>
+        quero viver uma história inteira.
+        <br><br>
 
         quero te apoiar,
         cuidar de você
-        e construir memórias lindas juntos ❤️ <br><br>
+        e construir memórias lindas juntos ❤️
+        <br><br>
 
-        obrigado por existir. <br><br>
+        obrigado por existir.
+        <br><br>
 
         eu gosto de você de um jeito muito verdadeiro
         e prometo fazer isso valer a pena ✨
+
       </p>
 
+      <!-- MÚSICA -->
       <audio id="musicPlayer" controls>
         <source src="musica.mp3" type="audio/mp3" />
       </audio>
@@ -85,6 +136,8 @@
     </div>
   </section>
 
+  <!-- JS -->
   <script src="script.js"></script>
+
 </body>
 </html>
