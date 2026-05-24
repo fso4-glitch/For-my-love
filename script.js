@@ -60,9 +60,6 @@ document.getElementById("proposalScreen");
 const finalScreen =
 document.getElementById("finalScreen");
 
-const music =
-document.getElementById("music");
-
 document.getElementById("startBtn")
 .addEventListener("click", () => {
 
@@ -78,9 +75,6 @@ document.getElementById("next1")
   screen2.classList.remove("active");
 
   screen3.classList.add("active");
-
-  music.play()
-  .catch(() => {});
 
 });
 
@@ -159,26 +153,6 @@ document.getElementById("yesBtn")
   finalScreen.classList.add("active");
 
   chuva();
-
-});
-
-document.getElementById("noBtn")
-.addEventListener("click", () => {
-
-  document.getElementById("noText")
-  .innerHTML = `
-  e se você ainda não estiver pronta agora,
-  relaxa amor ❤️
-  <br><br>
-
-  eu só queria
-  que você soubesse
-  o quanto você é especial pra mim ✨
-  <br><br>
-
-  independente da resposta…
-  você sempre vai ser alguém muito importante pra mim 💜
-  `;
 
 });
 
