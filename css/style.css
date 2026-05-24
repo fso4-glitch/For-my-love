@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, sans-serif;
+  font-family:'Poppins',sans-serif;
 }
 
 body{
   overflow:hidden;
-  background:black;
   color:white;
+  background:black;
 }
 
 /* FUNDO */
@@ -16,37 +18,34 @@ body{
   position:fixed;
   width:100%;
   height:100%;
-  background:linear-gradient(-45deg,#12001f,#5b0e8b,#ff4da6,#2b1055);
-  background-size:400% 400%;
-  animation:bg 10s ease infinite;
+  background:
+  radial-gradient(circle at top,#ff4da6 0%,transparent 35%),
+  radial-gradient(circle at bottom,#7b2cbf 0%,transparent 35%),
+  linear-gradient(135deg,#05010f,#160028,#26003f);
+  z-index:-3;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity:0.25;
   z-index:-2;
 }
 
-@keyframes bg{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-
-/* PARTÍCULAS */
-.particles::before,
-.particles::after{
+/* CORAÇÕES */
+.hearts::before{
   content:"";
   position:fixed;
-  width:200%;
-  height:200%;
-  background-image:radial-gradient(white 1px, transparent 1px);
-  background-size:40px 40px;
-  opacity:0.2;
-  animation:stars 60s linear infinite;
-  z-index:-1;
+  inset:0;
+  background-image:
+  radial-gradient(#ff6ec7 1px,transparent 1px);
+  background-size:50px 50px;
+  opacity:0.15;
+  animation:move 40s linear infinite;
 }
 
-.particles::after{
-  animation-duration:90s;
-}
-
-@keyframes stars{
+@keyframes move{
   from{
     transform:translateY(0);
   }
@@ -65,7 +64,6 @@ body{
   align-items:center;
   flex-direction:column;
   padding:20px;
-  text-align:center;
 }
 
 .screen.active{
@@ -74,36 +72,41 @@ body{
 
 /* GLASS */
 .glass{
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.2);
-  backdrop-filter:blur(15px);
-  padding:35px;
-  border-radius:25px;
-  max-width:500px;
-  width:100%;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 8px 40px rgba(255,0,128,0.15),
+  0 0 30px rgba(255,255,255,0.04);
+
+  border-radius:30px;
 }
 
-/* TEXTO */
-h1{
-  font-size:2rem;
+/* INTRO */
+.intro-card{
+  width:100%;
+  max-width:500px;
+  padding:60px 40px;
+  text-align:center;
+}
+
+.heart-icon{
+  font-size:60px;
+  color:#ff77c8;
   margin-bottom:20px;
 }
 
-p{
+.intro-card h1{
+  font-size:2rem;
+  font-weight:400;
   line-height:1.7;
-  font-size:1.1rem;
 }
 
-/* BOTÃO */
+/* BOTÕES */
 button{
-  margin-top:25px;
-  padding:14px 28px;
   border:none;
-  border-radius:40px;
-  background:white;
-  color:#ff4da6;
-  font-weight:bold;
   cursor:pointer;
   transition:0.3s;
 }
@@ -112,84 +115,206 @@ button:hover{
   transform:scale(1.05);
 }
 
+#startBtn,
+.pink-btn,
+.yes-btn{
+  margin-top:30px;
+  padding:14px 35px;
+  border-radius:40px;
+
+  background:linear-gradient(135deg,#ff4da6,#ff77c8);
+
+  color:white;
+  font-size:1rem;
+  font-weight:600;
+
+  box-shadow:
+  0 0 20px rgba(255,77,166,0.5);
+}
+
+.no-btn{
+  margin-top:30px;
+  padding:14px 35px;
+  border-radius:40px;
+
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+
+  color:white;
+}
+
+/* TÍTULO */
+.title{
+  margin-bottom:60px;
+  font-size:2rem;
+  font-weight:400;
+}
+
 /* ESTRELAS */
 .stars-container{
   display:flex;
-  gap:25px;
-  margin-top:40px;
+  gap:30px;
   flex-wrap:wrap;
   justify-content:center;
 }
 
 .star{
-  font-size:3rem;
+  font-size:100px;
+  color:#b388ff;
   cursor:pointer;
+
   transition:0.3s;
+
+  text-shadow:
+  0 0 15px #b388ff,
+  0 0 35px #b388ff;
+
   animation:pulse 2s infinite;
 }
 
+.special{
+  color:#ff5ebc;
+
+  text-shadow:
+  0 0 15px #ff5ebc,
+  0 0 35px #ff5ebc;
+}
+
 .star:hover{
-  transform:scale(1.2);
+  transform:scale(1.15);
 }
 
 @keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.1);}
-  100%{transform:scale(1);}
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.08);
+  }
+
+  100%{
+    transform:scale(1);
+  }
 }
 
-/* CARTA */
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.45);
+}
+
 .hidden{
   display:none;
 }
 
-#messageBox{
-  margin-top:30px;
-  animation:fade 0.5s ease;
+.modal-card{
+  width:90%;
+  max-width:430px;
+  padding:40px;
+  text-align:center;
+  position:relative;
 }
 
-@keyframes fade{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.close{
+  position:absolute;
+  right:18px;
+  top:15px;
+
+  background:none;
+  color:white;
+  font-size:30px;
 }
 
-/* FINAL */
+.star-number{
+  font-size:70px;
+  color:#b388ff;
+
+  text-shadow:
+  0 0 20px #b388ff;
+
+  margin-bottom:20px;
+}
+
+#modalText{
+  font-size:1.3rem;
+  line-height:1.7;
+}
+
+/* PEDIDO */
+.proposal-card{
+  width:100%;
+  max-width:520px;
+  padding:50px 35px;
+  text-align:center;
+}
+
+.proposal-card h2{
+  font-weight:400;
+  margin-bottom:10px;
+}
+
+.proposal-text{
+  opacity:0.9;
+  margin-bottom:25px;
+}
+
+.proposal-title{
+  font-size:2.4rem;
+  margin-bottom:20px;
+}
+
 .buttons{
   display:flex;
-  gap:15px;
   justify-content:center;
+  gap:15px;
   flex-wrap:wrap;
 }
 
-#noBtn{
-  background:rgba(255,255,255,0.2);
-  color:white;
+/* FINAL */
+.final-card{
+  width:100%;
+  max-width:520px;
+  padding:50px 35px;
+  text-align:center;
+}
+
+.final-card h1{
+  font-size:2.5rem;
+  margin-bottom:20px;
+}
+
+.final-card p{
+  font-size:1.2rem;
+  line-height:1.7;
 }
 
 audio{
-  margin-top:25px;
+  margin-top:30px;
   width:100%;
 }
 
 /* RESPONSIVO */
 @media(max-width:600px){
 
-  h1{
-    font-size:1.6rem;
+  .intro-card h1{
+    font-size:1.5rem;
   }
 
-  p{
-    font-size:1rem;
+  .title{
+    font-size:1.5rem;
   }
 
   .star{
-    font-size:2.5rem;
+    font-size:70px;
+  }
+
+  .proposal-title{
+    font-size:2rem;
   }
 
 }

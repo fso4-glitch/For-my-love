@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Para Você ❤️</title>
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <!-- FUNDO -->
   <div class="background"></div>
+  <div class="overlay"></div>
 
-  <!-- PARTÍCULAS -->
-  <div class="particles"></div>
+  <!-- CORAÇÕES -->
+  <div class="hearts"></div>
 
   <!-- TELA 1 -->
-  <section id="inicio" class="screen active">
+  <section class="screen active" id="screen1">
 
-    <div class="glass">
+    <div class="glass intro-card">
 
-      <h1 class="typing">
-        tem algumas coisas que eu nunca consegui te explicar direito...
+      <div class="heart-icon">♡</div>
+
+      <h1>
+        tem algumas coisas que eu
+        nunca consegui te explicar
+        direito...
       </h1>
 
       <button id="startBtn">
@@ -34,91 +39,111 @@
   </section>
 
   <!-- TELA 2 -->
-  <section id="universo" class="screen">
+  <section class="screen" id="screen2">
 
     <h1 class="title">
-      toque nas estrelas ❤️
+      toque nas estrelas 💗
     </h1>
 
     <div class="stars-container">
 
-      <div class="star" data-text="você virou a parte mais leve dos meus dias ✨">
-        ⭐
+      <div class="star" data-id="1"
+      data-text="você virou a parte mais leve dos meus dias ✨">
+        ☆
       </div>
 
-      <div class="star" data-text="você me faz sorrir mesmo nos dias ruins 💜">
-        ⭐
+      <div class="star" data-id="2"
+      data-text="você me faz sorrir mesmo nos dias ruins 💜">
+        ☆
       </div>
 
-      <div class="star" data-text="eu comecei a imaginar um futuro bonito com você ❤️">
-        ⭐
+      <div class="star" data-id="3"
+      data-text="eu comecei a imaginar um futuro bonito com você ❤️">
+        ☆
       </div>
 
       <div class="star special" id="specialStar">
-        ⭐
+        ☆
       </div>
 
     </div>
 
-    <!-- CARTA -->
-    <div id="messageBox" class="glass hidden">
+    <!-- MODAL -->
+    <div class="modal hidden" id="modal">
 
-      <p id="messageText"></p>
+      <div class="glass modal-card">
 
-      <button id="closeBtn">
-        fechar
-      </button>
+        <button class="close" id="closeBtn">
+          ×
+        </button>
+
+        <div class="star-number" id="starNumber">
+          1
+        </div>
+
+        <p id="modalText"></p>
+
+        <button class="pink-btn" id="closeModal">
+          fechar
+        </button>
+
+      </div>
 
     </div>
 
   </section>
 
-  <!-- TELA FINAL -->
-  <section id="finalScreen" class="screen">
+  <!-- PEDIDO -->
+  <section class="screen" id="screen3">
 
-    <div class="glass final-card">
+    <div class="glass proposal-card">
 
-      <h1>
+      <div class="heart-icon">♡</div>
+
+      <h2>
         e foi aí que eu percebi...
-      </h1>
+      </h2>
 
-      <p>
+      <p class="proposal-text">
         que eu não queria sentir tudo isso sozinho ❤️
       </p>
 
-      <h2>
+      <h1 class="proposal-title">
         Quer namorar comigo?
-      </h2>
+      </h1>
 
       <div class="buttons">
 
-        <button id="yesBtn">
+        <button class="yes-btn" id="yesBtn">
           SIM 💗
         </button>
 
-        <button id="noBtn">
+        <button class="no-btn" id="noBtn">
           NÃO 🥺
         </button>
 
       </div>
 
-      <p id="noText"></p>
+      <div id="noMessage"></div>
 
     </div>
 
   </section>
 
-  <!-- TELA SIM -->
-  <section id="yesScreen" class="screen">
+  <!-- FINAL -->
+  <section class="screen" id="screen4">
 
-    <div class="glass final-love">
+    <div class="glass final-card">
+
+      <div class="heart-icon">♡</div>
 
       <h1>
         você disse sim 💜
       </h1>
 
       <p>
-        agora oficialmente você é a melhor parte da minha vida ✨
+        agora oficialmente você é
+        a melhor parte da minha vida ✨
       </p>
 
       <audio controls autoplay loop>

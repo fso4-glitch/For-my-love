@@ -1,33 +1,34 @@
 const startBtn = document.getElementById("startBtn");
 
-const inicio = document.getElementById("inicio");
-const universo = document.getElementById("universo");
-
-const messageBox = document.getElementById("messageBox");
-const messageText = document.getElementById("messageText");
-
-const closeBtn = document.getElementById("closeBtn");
+const screen1 = document.getElementById("screen1");
+const screen2 = document.getElementById("screen2");
+const screen3 = document.getElementById("screen3");
+const screen4 = document.getElementById("screen4");
 
 const stars = document.querySelectorAll(".star");
 
-const specialStar = document.getElementById("specialStar");
+const modal = document.getElementById("modal");
+const modalText = document.getElementById("modalText");
 
-const finalScreen = document.getElementById("finalScreen");
+const closeBtn = document.getElementById("closeBtn");
+const closeModal = document.getElementById("closeModal");
+
+const specialStar = document.getElementById("specialStar");
 
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 
-const yesScreen = document.getElementById("yesScreen");
+const noMessage = document.getElementById("noMessage");
 
-const noText = document.getElementById("noText");
+const starNumber = document.getElementById("starNumber");
 
 let opened = 0;
 
 /* COMEÇAR */
 startBtn.addEventListener("click", () => {
 
-  inicio.classList.remove("active");
-  universo.classList.add("active");
+  screen1.classList.remove("active");
+  screen2.classList.add("active");
 
 });
 
@@ -41,8 +42,8 @@ stars.forEach((star) => {
 
       if(opened >= 3){
 
-        universo.classList.remove("active");
-        finalScreen.classList.add("active");
+        screen2.classList.remove("active");
+        screen3.classList.add("active");
 
       }else{
 
@@ -53,45 +54,50 @@ stars.forEach((star) => {
       return;
     }
 
-    /* CARTA */
-    messageText.innerText = star.dataset.text;
+    modal.classList.remove("hidden");
 
-    messageBox.classList.remove("hidden");
+    modalText.innerText = star.dataset.text;
+
+    starNumber.innerText = star.dataset.id;
 
     if(!star.classList.contains("opened")){
 
       star.classList.add("opened");
+
+      star.style.opacity = "0.4";
+
       opened++;
 
-      star.style.opacity = "0.5";
     }
 
   });
 
 });
 
-/* FECHAR CARTA */
+/* FECHAR */
 closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
 
-  messageBox.classList.add("hidden");
-
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
 });
 
 /* SIM */
 yesBtn.addEventListener("click", () => {
 
-  finalScreen.classList.remove("active");
+  screen3.classList.remove("active");
+  screen4.classList.add("active");
 
-  yesScreen.classList.add("active");
-
-  criarCoracoes();
+  chuva();
 
 });
 
 /* NÃO */
 noBtn.addEventListener("click", () => {
 
-  noText.innerHTML = `
+  noMessage.innerHTML = `
+  <br>
   talvez você ainda não esteja pronta...
   <br><br>
   e eu respeito totalmente isso ❤️
@@ -99,8 +105,8 @@ noBtn.addEventListener("click", () => {
 
 });
 
-/* CORAÇÕES */
-function criarCoracoes(){
+/* CHUVA */
+function chuva(){
 
   setInterval(() => {
 
@@ -109,11 +115,16 @@ function criarCoracoes(){
     heart.innerHTML = "💖";
 
     heart.style.position = "fixed";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.top = "100vh";
-    heart.style.fontSize = "25px";
 
-    heart.style.animation = "subir 4s linear forwards";
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.top = "-20px";
+
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+
+    heart.style.pointerEvents = "none";
+
+    heart.style.animation = "fall 4s linear forwards";
 
     document.body.appendChild(heart);
 
@@ -121,7 +132,7 @@ function criarCoracoes(){
       heart.remove();
     },4000);
 
-  },300);
+  },200);
 
 }
 
@@ -129,16 +140,18 @@ function criarCoracoes(){
 const style = document.createElement("style");
 
 style.innerHTML = `
-@keyframes subir{
+@keyframes fall{
+
   from{
-    transform:translateY(0);
+    transform:translateY(-20px);
     opacity:1;
   }
 
   to{
-    transform:translateY(-120vh);
+    transform:translateY(110vh);
     opacity:0;
   }
+
 }
 `;
 
