@@ -277,3 +277,26 @@ document.getElementById("noBtn")
   noWhatsappBtn.style.display = "block";
 
 });
+
+/* NÃO */
+document.getElementById("noBtn")
+.addEventListener("click", () => {
+
+document.getElementById("noText")
+.style.display = "block";
+
+document.getElementById("noWhatsappBtn")
+.style.display = "block";
+
+});
+
+/* BOTÃO WHATSAPP NÃO */
+document.getElementById("noWhatsappBtn")
+.addEventListener("click", () => {
+
+window.open(
+"https://wa.me/5533997001131?text=acho%20que%20ainda%20não%20é%20agora%20🥺",
+"_blank"
+);
+
+});
