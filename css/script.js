@@ -1,31 +1,33 @@
-function abrirPedido(){
-document.getElementById("inicio").classList.add("hidden");
-document.getElementById("pedido").classList.remove("hidden");
+function abrirCarta() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("conteudo").style.display = "block";
 }
 
-function aceitou(){
-document.getElementById("pedido").classList.add("hidden");
-document.getElementById("final").classList.remove("hidden");
+function respostaSim() {
+    document.getElementById("resposta").innerHTML = `
+        <h1>Você disse sim 💜</h1>
+        <p>
+        desde o momento que você entrou na minha vida,
+        meus dias ficaram mais bonitos.
+        teu sorriso tem um jeito de acalmar tudo.
+        eu quero viver momentos lindos com você,
+        te apoiar, cuidar de você e construir memórias juntos 💖
+        obrigado por existir ✨
+        </p>
 
-document.getElementById("musica").play();
+        <audio controls autoplay>
+            <source src="musica.mp3" type="audio/mpeg">
+        </audio>
+    `;
 }
 
-function recusou(){
-document.getElementById("pedido").innerHTML=`
-<h1>Talvez você ainda não esteja pronta ❤️</h1>
-
-<p class="texto">
-e tá tudo bem...
-
-eu respeito totalmente sua decisão.
-
-o mais importante pra mim
-sempre vai ser te ver feliz ✨
-
-mas precisava te mostrar
-o quanto você é especial pra mim.
-</p>
-
-<button onclick="location.reload()">Voltar</button>
-`;
+function respostaNao() {
+    document.getElementById("resposta").innerHTML = `
+        <h1>Tá tudo bem 🤍</h1>
+        <p>
+        talvez você ainda não esteja pronta...
+        e eu respeito totalmente isso.
+        o carinho que sinto por você continua aqui ✨
+        </p>
+    `;
 }
