@@ -79,7 +79,19 @@ document.getElementById("next1")
   /* COMEÇA A MÚSICA */
   music.volume = 0;
 
-  music.play().catch(() => {});
+  music.currentTime = 0;
+
+music.play()
+.then(() => {
+
+  console.log("Música tocando ❤️");
+
+})
+.catch((err) => {
+
+  console.log("Erro ao tocar:", err);
+
+});
 
   /* FADE */
   let volume = 0;
