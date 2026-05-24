@@ -1,24 +1,13 @@
 function abrirCarta() {
     document.getElementById("inicio").style.display = "none";
-    document.getElementById("conteudo").style.display = "block";
+    document.getElementById("pedido").style.display = "block";
 }
 
 function respostaSim() {
-    document.getElementById("resposta").innerHTML = `
-        <h1>Você disse sim 💜</h1>
-        <p>
-        desde o momento que você entrou na minha vida,
-        meus dias ficaram mais bonitos.
-        teu sorriso tem um jeito de acalmar tudo.
-        eu quero viver momentos lindos com você,
-        te apoiar, cuidar de você e construir memórias juntos 💖
-        obrigado por existir ✨
-        </p>
+    document.getElementById("pedido").style.display = "none";
+    document.getElementById("final").style.display = "block";
 
-        <audio controls autoplay>
-            <source src="musica.mp3" type="audio/mpeg">
-        </audio>
-    `;
+    document.getElementById("musica").play();
 }
 
 function respostaNao() {
