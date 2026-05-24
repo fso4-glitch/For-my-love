@@ -310,3 +310,35 @@ button:hover{
   }
 
 }
+
+.insta-btn{
+
+  display:inline-block;
+
+  margin-top:25px;
+
+  padding:14px 30px;
+
+  border-radius:40px;
+
+  text-decoration:none;
+
+  background:
+  linear-gradient(135deg,#ff4da6,#ff77c8);
+
+  color:white;
+
+  font-weight:600;
+
+  box-shadow:
+  0 0 20px rgba(255,77,166,0.5);
+
+  transition:0.3s;
+
+}
+
+.insta-btn:hover{
+
+  transform:scale(1.05);
+
+}
