@@ -1,3 +1,4 @@
+/* TEXTO DIGITANDO */
 const typing =
 document.getElementById("typing");
 
@@ -50,6 +51,10 @@ document.getElementById("proposalScreen");
 const finalScreen =
 document.getElementById("finalScreen");
 
+/* MÚSICA */
+const music =
+document.getElementById("music");
+
 /* BOTÕES */
 document.getElementById("startBtn")
 .addEventListener("click", () => {
@@ -78,6 +83,7 @@ document.getElementById("next2")
 
 });
 
+/* BOTÃO CONTAGEM */
 document.getElementById("countBtn")
 .addEventListener("click", () => {
 
@@ -95,38 +101,75 @@ function iniciarContagem(){
   const count =
   document.getElementById("count");
 
-  let numero = 3;
+  /* TEXTO ANTES */
+  const texto =
+  document.querySelector(".count-container p");
 
-  const intervalo =
-  setInterval(() => {
+  texto.innerHTML = `
+  essa música sempre me lembrou você...
+  `;
 
-    numero--;
+  /* PEQUENO SILÊNCIO */
+  setTimeout(() => {
 
-    if(numero > 0){
+    let numero = 3;
 
-      count.innerHTML = numero;
+    count.innerHTML = numero;
 
-    }else{
+    const intervalo =
+    setInterval(() => {
 
-      clearInterval(intervalo);
+      numero--;
 
-      count.innerHTML = "❤️";
+      if(numero > 0){
 
-      setTimeout(() => {
+        count.innerHTML = numero;
 
-        countScreen.classList.remove("active");
+      }else{
 
-        proposalScreen.classList.add("active");
+        clearInterval(intervalo);
 
-        document.getElementById("music")
-        .play()
-        .catch(() => {});
+        count.innerHTML = "❤️";
 
-      },1500);
+        /* COMEÇA A MÚSICA */
+        music.volume = 0;
 
-    }
+        music.play().catch(() => {});
 
-  },1000);
+        /* FADE IN */
+        let volume = 0;
+
+        const fade =
+        setInterval(() => {
+
+          if(volume < 1){
+
+            volume += 0.05;
+
+            music.volume = volume;
+
+          }else{
+
+            clearInterval(fade);
+
+          }
+
+        },200);
+
+        /* ABRE PEDIDO */
+        setTimeout(() => {
+
+          countScreen.classList.remove("active");
+
+          proposalScreen.classList.add("active");
+
+        },1500);
+
+      }
+
+    },1000);
+
+  },2000);
 
 }
 
@@ -155,7 +198,7 @@ document.getElementById("noBtn")
 
 });
 
-/* CHUVA */
+/* CHUVA DE CORAÇÕES */
 function chuva(){
 
   setInterval(() => {
@@ -174,6 +217,8 @@ function chuva(){
 
     heart.style.fontSize =
     Math.random() * 20 + 20 + "px";
+
+    heart.style.pointerEvents = "none";
 
     heart.style.animation =
     "fall 4s linear forwards";
