@@ -1,332 +1,222 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* TEXTO DIGITANDO */
+const typing =
+document.getElementById("typing");
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+const text = `
+24 de dezembro de 2025…
 
-body{
-  overflow:hidden;
-  color:white;
-  background:black;
-}
+eu ainda não fazia ideia
+que naquele dia
+Deus colocaria na minha vida
+a pessoa que mudaria completamente meu coração ❤️
 
-/* FUNDO */
-.background{
-  position:fixed;
-  inset:0;
+porque foi ali
+que eu encontrei alguém
+que me trouxe paz,
+felicidade,
+amor
+e a vontade de viver
+um futuro inteiro ao lado dela ✨
+`;
 
-  background:
-  radial-gradient(circle at top,#ff4da6 0%,transparent 30%),
-  radial-gradient(circle at bottom,#7b2cbf 0%,transparent 30%),
-  linear-gradient(135deg,#04010a,#12001f,#220035);
+let i = 0;
 
-  background-size:400% 400%;
-  animation:bg 12s ease infinite;
+function escrever(){
 
-  z-index:-3;
-}
+  if(i < text.length){
 
-@keyframes bg{
+    typing.innerHTML += text.charAt(i);
 
-  0%{
-    background-position:0% 50%;
-  }
+    i++;
 
-  50%{
-    background-position:100% 50%;
-  }
+    setTimeout(escrever,50);
 
-  100%{
-    background-position:0% 50%;
   }
 
 }
 
-/* ESTRELAS */
-.particles::before{
-  content:"";
-
-  position:fixed;
-  inset:0;
-
-  background-image:
-  radial-gradient(white 1px,transparent 1px);
-
-  background-size:50px 50px;
-
-  opacity:0.2;
-
-  animation:stars 50s linear infinite;
-}
-
-@keyframes stars{
-
-  from{
-    transform:translateY(0);
-  }
-
-  to{
-    transform:translateY(-500px);
-  }
-
-}
+escrever();
 
 /* TELAS */
-.screen{
-  position:absolute;
+const screen1 = document.getElementById("screen1");
+const screen2 = document.getElementById("screen2");
+const screen3 = document.getElementById("screen3");
+const screen4 = document.getElementById("screen4");
+const screen5 = document.getElementById("screen5");
+const countScreen = document.getElementById("countScreen");
+const proposalScreen = document.getElementById("proposalScreen");
+const finalScreen = document.getElementById("finalScreen");
 
-  width:100%;
-  height:100%;
-
-  display:none;
-
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-
-  padding:20px;
-
-  text-align:center;
-}
-
-.screen.active{
-  display:flex;
-}
-
-/* GLASS */
-.glass{
-  width:100%;
-  max-width:500px;
-
-  padding:35px 25px;
-
-  border-radius:30px;
-
-  background:rgba(255,255,255,0.08);
-
-  border:1px solid rgba(255,255,255,0.1);
-
-  backdrop-filter:blur(18px);
-
-  box-shadow:
-  0 0 35px rgba(255,0,140,0.2);
-
-  animation:fade 1s ease;
-}
-
-/* TEXTO */
-h1{
-  font-size:2rem;
-  line-height:1.5;
-  font-weight:600;
-}
-
-h2{
-  margin-top:15px;
-  font-size:1.5rem;
-}
-
-p{
-  margin-top:20px;
-
-  line-height:1.8;
-
-  font-size:1.05rem;
-
-  color:rgba(255,255,255,0.9);
-}
+/* MÚSICA */
+const music =
+document.getElementById("music");
 
 /* BOTÕES */
-button{
-  margin-top:30px;
+document.getElementById("startBtn")
+.addEventListener("click", () => {
 
-  padding:14px 35px;
+  screen1.classList.remove("active");
+  screen2.classList.add("active");
 
-  border:none;
-  border-radius:40px;
+});
 
-  background:
-  linear-gradient(135deg,#ff4da6,#ff77c8);
+document.getElementById("next1")
+.addEventListener("click", () => {
 
-  color:white;
+  screen2.classList.remove("active");
+  screen3.classList.add("active");
 
-  font-size:1rem;
-  font-weight:600;
+  music.play().catch(() => {});
 
-  cursor:pointer;
+});
 
-  transition:0.3s;
+document.getElementById("next2")
+.addEventListener("click", () => {
 
-  box-shadow:
-  0 0 20px rgba(255,77,166,0.5);
-}
+  screen3.classList.remove("active");
+  screen4.classList.add("active");
 
-button:hover{
-  transform:scale(1.05);
-}
+});
 
-#noBtn{
-  background:rgba(255,255,255,0.08);
+document.getElementById("next3")
+.addEventListener("click", () => {
 
-  border:1px solid rgba(255,255,255,0.1);
-}
+  screen4.classList.remove("active");
+  screen5.classList.add("active");
 
-/* IMAGEM FILME */
-.movie-img{
-  width:85%;
-  max-width:240px;
+});
 
-  height:auto;
+document.getElementById("countBtn")
+.addEventListener("click", () => {
 
-  border-radius:25px;
+  screen5.classList.remove("active");
+  countScreen.classList.add("active");
 
-  border:3px solid rgba(255,255,255,0.15);
+  iniciarContagem();
 
-  object-fit:contain;
-
-  margin-bottom:20px;
-
-  box-shadow:
-  0 0 25px rgba(255,255,255,0.12);
-
-  transition:0.4s;
-}
-
-.movie-img:hover{
-  transform:scale(1.03);
-}
-
-/* FOTO CASAL */
-.slider{
-  width:100%;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  margin-bottom:20px;
-}
-
-.couple-img{
-  width:85%;
-  max-width:260px;
-
-  height:auto;
-
-  border-radius:25px;
-
-  border:3px solid rgba(255,255,255,0.15);
-
-  object-fit:contain;
-
-  box-shadow:
-  0 0 25px rgba(255,255,255,0.12);
-
-  transition:0.4s;
-}
-
-.couple-img:hover{
-  transform:scale(1.03);
-}
+});
 
 /* CONTAGEM */
-#count{
-  font-size:8rem;
+function iniciarContagem(){
 
-  color:#ff77c8;
+  const count =
+  document.getElementById("count");
 
-  text-shadow:
-  0 0 20px #ff77c8,
-  0 0 40px #ff77c8;
+  let numero = 3;
 
-  animation:pulse 1s infinite;
-}
+  count.innerHTML = numero;
 
-@keyframes pulse{
+  const intervalo =
+  setInterval(() => {
 
-  0%{
-    transform:scale(1);
-  }
+    numero--;
 
-  50%{
-    transform:scale(1.1);
-  }
+    if(numero > 0){
 
-  100%{
-    transform:scale(1);
-  }
+      count.innerHTML = numero;
 
-}
+    }else{
 
-/* TEXTO DIGITANDO */
-#typing::after{
-  content:"|";
-  animation:blink 1s infinite;
-}
+      clearInterval(intervalo);
 
-@keyframes blink{
+      count.innerHTML = "❤️";
 
-  0%{
-    opacity:1;
-  }
+      setTimeout(() => {
 
-  50%{
-    opacity:0;
-  }
+        countScreen.classList.remove("active");
+        proposalScreen.classList.add("active");
 
-  100%{
-    opacity:1;
-  }
+      },1500);
+
+    }
+
+  },1000);
 
 }
 
-/* ANIMAÇÕES */
-@keyframes fade{
+/* SIM */
+document.getElementById("yesBtn")
+.addEventListener("click", () => {
+
+  proposalScreen.classList.remove("active");
+  finalScreen.classList.add("active");
+
+  chuva();
+
+});
+
+/* NÃO */
+document.getElementById("noBtn")
+.addEventListener("click", () => {
+
+  document.getElementById("noText")
+  .innerHTML = `
+  e se você ainda não estiver pronta agora,
+  relaxa amor ❤️
+  <br><br>
+
+  eu só queria
+  que você soubesse
+  o quanto você é especial pra mim ✨
+  `;
+
+});
+
+/* CHUVA */
+function chuva(){
+
+  setInterval(() => {
+
+    const heart =
+    document.createElement("div");
+
+    heart.innerHTML = "💖";
+
+    heart.style.position = "fixed";
+
+    heart.style.left =
+    Math.random() * 100 + "vw";
+
+    heart.style.top = "-20px";
+
+    heart.style.fontSize =
+    Math.random() * 20 + 20 + "px";
+
+    heart.style.pointerEvents = "none";
+
+    heart.style.animation =
+    "fall 4s linear forwards";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+      heart.remove();
+
+    },4000);
+
+  },250);
+
+}
+
+/* ANIMAÇÃO */
+const style =
+document.createElement("style");
+
+style.innerHTML = `
+@keyframes fall{
 
   from{
-    opacity:0;
-    transform:translateY(20px);
+    transform:translateY(-20px);
+    opacity:1;
   }
 
   to{
-    opacity:1;
-    transform:translateY(0);
+    transform:translateY(110vh);
+    opacity:0;
   }
 
 }
+`;
 
-/* RESPONSIVO */
-@media(max-width:600px){
-
-  .glass{
-    padding:30px 20px;
-  }
-
-  h1{
-    font-size:1.5rem;
-  }
-
-  h2{
-    font-size:1.2rem;
-  }
-
-  p{
-    font-size:1rem;
-  }
-
-  #count{
-    font-size:6rem;
-  }
-
-  .movie-img{
-    max-width:200px;
-  }
-
-  .couple-img{
-    max-width:220px;
-  }
-
-}
+document.head.appendChild(style);

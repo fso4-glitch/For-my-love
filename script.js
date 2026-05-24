@@ -1,271 +1,361 @@
-/* TEXTO DIGITANDO */
-const typing =
-document.getElementById("typing");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-const text = `
-24 de dezembro de 2025…
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
-eu ainda não fazia ideia
-que naquele dia
-Deus colocaria na minha vida
-a pessoa que mudaria completamente meu coração ❤️
+body{
+  overflow:hidden;
+  color:white;
+  background:black;
+}
 
-porque foi ali
-que eu encontrei alguém
-que me trouxe paz,
-felicidade,
-amor
-e a vontade de viver
-um futuro inteiro ao lado dela ✨
-`;
+/* FUNDO */
+.background{
+  position:fixed;
+  inset:0;
 
-let i = 0;
+  background:
+  radial-gradient(circle at top,#ff4da6 0%,transparent 30%),
+  radial-gradient(circle at bottom,#7b2cbf 0%,transparent 30%),
+  linear-gradient(135deg,#04010a,#12001f,#220035);
 
-function escrever(){
+  background-size:400% 400%;
+  animation:bg 12s ease infinite;
 
-  if(i < text.length){
+  z-index:-3;
+}
 
-    typing.innerHTML += text.charAt(i);
+@keyframes bg{
 
-    i++;
+  0%{
+    background-position:0% 50%;
+  }
 
-    setTimeout(escrever,50);
+  50%{
+    background-position:100% 50%;
+  }
 
+  100%{
+    background-position:0% 50%;
   }
 
 }
 
-escrever();
+/* ESTRELAS */
+.particles::before{
+  content:"";
 
-/* TELAS */
-const screen1 =
-document.getElementById("screen1");
+  position:fixed;
+  inset:0;
 
-const screen2 =
-document.getElementById("screen2");
+  background-image:
+  radial-gradient(white 1px,transparent 1px);
 
-const screen3 =
-document.getElementById("screen3");
+  background-size:50px 50px;
 
-const screen4 =
-document.getElementById("screen4");
+  opacity:0.2;
 
-const screen5 =
-document.getElementById("screen5");
+  animation:stars 50s linear infinite;
+}
 
-const countScreen =
-document.getElementById("countScreen");
+@keyframes stars{
 
-const proposalScreen =
-document.getElementById("proposalScreen");
+  from{
+    transform:translateY(0);
+  }
 
-const finalScreen =
-document.getElementById("finalScreen");
-
-/* MÚSICA */
-const music =
-document.getElementById("music");
-
-/* BOTÃO INÍCIO */
-document.getElementById("startBtn")
-.addEventListener("click", () => {
-
-  screen1.classList.remove("active");
-
-  screen2.classList.add("active");
-
-});
-
-/* FILME -> MÚSICA */
-document.getElementById("next1")
-.addEventListener("click", () => {
-
-  screen2.classList.remove("active");
-
-  screen3.classList.add("active");
-
-  music.currentTime = 0;
-
-  music.play()
-  .catch(() => {});
-
-  music.volume = 0;
-
-  let volume = 0;
-
-  const fade = setInterval(() => {
-
-    if(volume < 0.5){
-
-      volume += 0.05;
-
-      music.volume = volume;
-
-    }else{
-
-      clearInterval(fade);
-
-    }
-
-  },200);
-
-});
-
-/* MÚSICA -> FOTO */
-document.getElementById("next2")
-.addEventListener("click", () => {
-
-  screen3.classList.remove("active");
-
-  screen4.classList.add("active");
-
-});
-
-/* FOTO -> TEXTO */
-document.getElementById("next3")
-.addEventListener("click", () => {
-
-  screen4.classList.remove("active");
-
-  screen5.classList.add("active");
-
-});
-
-/* TEXTO -> CONTAGEM */
-document.getElementById("countBtn")
-.addEventListener("click", () => {
-
-  screen5.classList.remove("active");
-
-  countScreen.classList.add("active");
-
-  iniciarContagem();
-
-});
-
-/* CONTAGEM */
-function iniciarContagem(){
-
-  const count =
-  document.getElementById("count");
-
-  let numero = 3;
-
-  count.innerHTML = numero;
-
-  const intervalo =
-  setInterval(() => {
-
-    numero--;
-
-    if(numero > 0){
-
-      count.innerHTML = numero;
-
-    }else{
-
-      clearInterval(intervalo);
-
-      count.innerHTML = "❤️";
-
-      setTimeout(() => {
-
-        countScreen.classList.remove("active");
-
-        proposalScreen.classList.add("active");
-
-      },1500);
-
-    }
-
-  },1000);
+  to{
+    transform:translateY(-500px);
+  }
 
 }
 
-/* BOTÃO SIM */
-document.getElementById("yesBtn")
-.addEventListener("click", () => {
+/* TELAS */
+.screen{
+  position:absolute;
 
-  proposalScreen.classList.remove("active");
+  width:100%;
+  height:100%;
 
-  finalScreen.classList.add("active");
+  display:none;
 
-  chuva();
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
 
-});
+  padding:20px;
 
-/* TEXTO DO NÃO */
-document.getElementById("noBtn")
-.addEventListener("click", () => {
+  text-align:center;
+}
 
-  document.getElementById("noText")
-  .innerHTML = `
-  e se você ainda não estiver pronta agora,
-  relaxa amor ❤️
-  <br><br>
+.screen.active{
+  display:flex;
+}
 
-  eu só queria
-  que você soubesse
-  o quanto você é especial pra mim ✨
-  `;
+/* GLASS */
+.glass{
+  width:100%;
+  max-width:500px;
 
-});
+  padding:35px 25px;
 
-/* CHUVA DE CORAÇÕES */
-function chuva(){
+  border-radius:30px;
 
-  setInterval(() => {
+  background:rgba(255,255,255,0.08);
 
-    const heart =
-    document.createElement("div");
+  border:1px solid rgba(255,255,255,0.1);
 
-    heart.innerHTML = "💖";
+  backdrop-filter:blur(18px);
 
-    heart.style.position = "fixed";
+  box-shadow:
+  0 0 35px rgba(255,0,140,0.2);
 
-    heart.style.left =
-    Math.random() * 100 + "vw";
+  animation:fade 1s ease;
 
-    heart.style.top = "-20px";
+  overflow:hidden;
+}
 
-    heart.style.fontSize =
-    Math.random() * 20 + 20 + "px";
+/* TEXTO */
+h1{
+  font-size:2rem;
+  line-height:1.5;
+  font-weight:600;
+}
 
-    heart.style.pointerEvents = "none";
+h2{
+  margin-top:15px;
+  font-size:1.5rem;
+}
 
-    heart.style.animation =
-    "fall 4s linear forwards";
+p{
+  margin-top:20px;
 
-    document.body.appendChild(heart);
+  line-height:1.8;
 
-    setTimeout(() => {
+  font-size:1.05rem;
 
-      heart.remove();
+  color:rgba(255,255,255,0.9);
+}
 
-    },4000);
+/* BOTÕES */
+button{
+  margin-top:30px;
 
-  },250);
+  padding:14px 35px;
+
+  border:none;
+  border-radius:40px;
+
+  background:
+  linear-gradient(135deg,#ff4da6,#ff77c8);
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+  box-shadow:
+  0 0 15px rgba(255,77,166,0.35);
+
+  position:relative;
+  z-index:2;
+}
+
+button:hover{
+  transform:scale(1.05);
+
+  box-shadow:
+  0 0 25px rgba(255,77,166,0.55);
+}
+
+#noBtn{
+  background:rgba(255,255,255,0.08);
+
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+/* IMAGEM FILME */
+.movie-img{
+  width:85%;
+  max-width:240px;
+
+  height:auto;
+
+  border-radius:25px;
+
+  border:3px solid rgba(255,255,255,0.15);
+
+  object-fit:contain;
+
+  margin-bottom:20px;
+
+  box-shadow:
+  0 0 25px rgba(255,255,255,0.12);
+
+  transition:0.4s;
+}
+
+.movie-img:hover{
+  transform:scale(1.03);
+}
+
+/* FOTO */
+.slider{
+  width:100%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  margin-bottom:20px;
+}
+
+.couple-img{
+  width:85%;
+  max-width:260px;
+
+  height:auto;
+
+  border-radius:25px;
+
+  border:3px solid rgba(255,255,255,0.15);
+
+  object-fit:contain;
+
+  box-shadow:
+  0 0 25px rgba(255,255,255,0.12);
+
+  transition:0.4s;
+}
+
+.couple-img:hover{
+  transform:scale(1.03);
+}
+
+/* CONTAGEM */
+#count{
+  font-size:8rem;
+
+  color:#ff77c8;
+
+  text-shadow:
+  0 0 20px #ff77c8,
+  0 0 40px #ff77c8;
+
+  animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.1);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+
+/* DIGITANDO */
+#typing::after{
+  content:"|";
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+  0%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:1;
+  }
+
+}
+
+/* BOTÃO INSTA */
+.insta-btn{
+
+  display:inline-block;
+
+  margin-top:25px;
+
+  padding:14px 30px;
+
+  border-radius:40px;
+
+  text-decoration:none;
+
+  color:white;
+
+  font-weight:600;
+
+  background:
+  linear-gradient(135deg,#ff4da6,#c13584,#833ab4);
+
+  box-shadow:
+  0 0 20px rgba(255,77,166,0.4);
+
+  transition:0.3s;
+
+}
+
+.insta-btn:hover{
+
+  transform:scale(1.05);
 
 }
 
 /* ANIMAÇÃO */
-const style =
-document.createElement("style");
-
-style.innerHTML = `
-@keyframes fall{
+@keyframes fade{
 
   from{
-    transform:translateY(-20px);
-    opacity:1;
+    opacity:0;
+    transform:translateY(20px);
   }
 
   to{
-    transform:translateY(110vh);
-    opacity:0;
+    opacity:1;
+    transform:translateY(0);
   }
 
 }
-`;
 
-document.head.appendChild(style);
+/* RESPONSIVO */
+@media(max-width:600px){
+
+  h1{
+    font-size:1.5rem;
+  }
+
+  h2{
+    font-size:1.2rem;
+  }
+
+  p{
+    font-size:1rem;
+  }
+
+  #count{
+    font-size:6rem;
+  }
+
+}
