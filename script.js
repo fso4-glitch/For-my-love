@@ -62,6 +62,10 @@ document.getElementById("proposalScreen");
 const finalScreen =
 document.getElementById("finalScreen");
 
+/* MÚSICA */
+const music =
+document.getElementById("music");
+
 /* BOTÕES */
 document.getElementById("startBtn")
 .addEventListener("click", () => {
@@ -72,6 +76,7 @@ document.getElementById("startBtn")
 
 });
 
+/* FILME -> MÚSICA */
 document.getElementById("next1")
 .addEventListener("click", () => {
 
@@ -79,8 +84,23 @@ document.getElementById("next1")
 
   screen3.classList.add("active");
 
+  music.volume = 1;
+
+  music.play()
+  .then(() => {
+
+    console.log("música tocando");
+
+  })
+  .catch((erro) => {
+
+    console.log("erro ao tocar música", erro);
+
+  });
+
 });
 
+/* MÚSICA -> FOTO */
 document.getElementById("next2")
 .addEventListener("click", () => {
 
@@ -90,6 +110,7 @@ document.getElementById("next2")
 
 });
 
+/* FOTO -> TEXTO */
 document.getElementById("next3")
 .addEventListener("click", () => {
 
@@ -99,6 +120,7 @@ document.getElementById("next3")
 
 });
 
+/* TEXTO -> CONTAGEM */
 document.getElementById("countBtn")
 .addEventListener("click", () => {
 
@@ -149,7 +171,7 @@ function iniciarContagem(){
 
 }
 
-/* BOTÕES WHATSAPP */
+/* BOTÕES */
 const yesBtn =
 document.getElementById("yesBtn");
 
@@ -165,41 +187,27 @@ yesBtn.addEventListener("click", () => {
 
   chuva();
 
-  const btn =
-  document.createElement("a");
-
-  btn.href =
- href="https://wa.me/5533997001131?text=Eu%20aceito%20simm%20meu%20amor%20❤️"
-  btn.target = "_blank";
-
-  btn.className =
-  "whats-btn";
-
-  btn.innerHTML =
-  "se você aceita aperta aqui 💖";
-
-  finalScreen.appendChild(btn);
-
 });
 
 /* NÃO */
 noBtn.addEventListener("click", () => {
 
-  const btn =
-  document.createElement("a");
+  document.getElementById("noText")
+  .style.display = "block";
 
-  btn.href =
-  "https://wa.me/5533997001131?text=Amor%20eu%20ainda%20n%C3%A3o%20estou%20pronta%20agora%20%E2%9D%A4%EF%B8%8F";
+  document.getElementById("noWhatsappBtn")
+  .style.display = "block";
 
-  btn.target = "_blank";
+});
 
-  btn.className =
-  "whats-btn";
+/* BOTÃO WHATSAPP NÃO */
+document.getElementById("noWhatsappBtn")
+.addEventListener("click", () => {
 
-  btn.innerHTML =
-  "se você acha que não é agora aperta aqui 🥺";
-
-  proposalScreen.appendChild(btn);
+  window.open(
+  "https://wa.me/5533997001131?text=acho%20que%20ainda%20não%20é%20agora%20🥺",
+  "_blank"
+  );
 
 });
 
@@ -261,41 +269,3 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
-
-const noText =
-document.getElementById("noText");
-
-const noWhatsappBtn =
-document.getElementById("noWhatsappBtn");
-
-document.getElementById("noBtn")
-.addEventListener("click", () => {
-
-  noText.style.display = "block";
-
-  noWhatsappBtn.style.display = "block";
-
-});
-
-/* NÃO */
-document.getElementById("noBtn")
-.addEventListener("click", () => {
-
-document.getElementById("noText")
-.style.display = "block";
-
-document.getElementById("noWhatsappBtn")
-.style.display = "block";
-
-});
-
-/* BOTÃO WHATSAPP NÃO */
-document.getElementById("noWhatsappBtn")
-.addEventListener("click", () => {
-
-window.open(
-"https://wa.me/5533997001131?text=acho%20que%20ainda%20não%20é%20agora%20🥺",
-"_blank"
-);
-
-});
