@@ -24,7 +24,6 @@ body{
   linear-gradient(135deg,#04010a,#12001f,#220035);
 
   background-size:400% 400%;
-
   animation:bg 12s ease infinite;
 
   z-index:-3;
@@ -97,12 +96,12 @@ body{
   display:flex;
 }
 
-/* GLASS */
+/* GLASS EFFECT */
 .glass{
   width:100%;
   max-width:500px;
 
-  padding:40px 30px;
+  padding:35px 25px;
 
   border-radius:30px;
 
@@ -121,12 +120,12 @@ body{
 /* TEXTO */
 h1{
   font-size:2rem;
-  line-height:1.6;
-  font-weight:400;
+  line-height:1.5;
+  font-weight:600;
 }
 
 h2{
-  margin-top:10px;
+  margin-top:15px;
   font-size:1.5rem;
 }
 
@@ -135,7 +134,9 @@ p{
 
   line-height:1.8;
 
-  font-size:1.1rem;
+  font-size:1.05rem;
+
+  color:rgba(255,255,255,0.9);
 }
 
 /* BOTÕES */
@@ -173,34 +174,43 @@ button:hover{
   border:1px solid rgba(255,255,255,0.1);
 }
 
-/* IMAGENS */
-.movie-img,
+/* IMAGEM FILME */
+.movie-img{
+  width:100%;
+  max-width:260px;
+
+  border-radius:20px;
+
+  margin-bottom:20px;
+
+  object-fit:cover;
+
+  box-shadow:
+  0 0 25px rgba(255,255,255,0.15);
+}
+
+/* FOTO CASAL */
+.slider{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  margin-bottom:20px;
+}
+
 .couple-img{
   width:100%;
+  max-width:350px;
 
   height:auto;
 
-  border-radius:20px;
+  border-radius:25px;
 
   object-fit:contain;
-}
-}
 
-.slider{
-  .slider{
-  width:100%;
-
-  overflow:hidden;
-
-  border-radius:20px;
-}
-}
-
-.couple-img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
+  box-shadow:
+  0 0 25px rgba(255,255,255,0.12);
 }
 
 /* CONTAGEM */
@@ -232,6 +242,28 @@ button:hover{
 
 }
 
+/* TEXTO DIGITANDO */
+#typing::after{
+  content:"|";
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+  0%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:1;
+  }
+
+}
+
 /* ANIMAÇÕES */
 @keyframes fade{
 
@@ -250,6 +282,10 @@ button:hover{
 /* RESPONSIVO */
 @media(max-width:600px){
 
+  .glass{
+    padding:30px 20px;
+  }
+
   h1{
     font-size:1.5rem;
   }
@@ -266,8 +302,12 @@ button:hover{
     font-size:6rem;
   }
 
-  .slider{
-    height:280px;
+  .movie-img{
+    max-width:220px;
+  }
+
+  .couple-img{
+    max-width:100%;
   }
 
 }
