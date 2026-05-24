@@ -42,6 +42,9 @@ document.getElementById("screen3");
 const screen4 =
 document.getElementById("screen4");
 
+const screen5 =
+document.getElementById("screen5");
+
 const countScreen =
 document.getElementById("countScreen");
 
@@ -65,7 +68,7 @@ document.getElementById("startBtn")
 
 });
 
-/* FILME -> FOTO */
+/* FILME -> MÚSICA */
 document.getElementById("next1")
 .addEventListener("click", () => {
 
@@ -78,7 +81,7 @@ document.getElementById("next1")
 
   music.play().catch(() => {});
 
-  /* FADE IN */
+  /* FADE */
   let volume = 0;
 
   const fade = setInterval(() => {
@@ -99,7 +102,7 @@ document.getElementById("next1")
 
 });
 
-/* FOTO -> TEXTO */
+/* MÚSICA -> FOTOS */
 document.getElementById("next2")
 .addEventListener("click", () => {
 
@@ -109,11 +112,21 @@ document.getElementById("next2")
 
 });
 
+/* FOTOS -> TEXTO */
+document.getElementById("next3")
+.addEventListener("click", () => {
+
+  screen4.classList.remove("active");
+
+  screen5.classList.add("active");
+
+});
+
 /* TEXTO -> CONTAGEM */
 document.getElementById("countBtn")
 .addEventListener("click", () => {
 
-  screen4.classList.remove("active");
+  screen5.classList.remove("active");
 
   countScreen.classList.add("active");
 
@@ -261,3 +274,27 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
+
+/* CARROSSEL */
+const slides =
+document.querySelectorAll(".slide");
+
+let current = 0;
+
+setInterval(() => {
+
+  slides[current]
+  .classList.remove("active");
+
+  current++;
+
+  if(current >= slides.length){
+
+    current = 0;
+
+  }
+
+  slides[current]
+  .classList.add("active");
+
+},3000);
