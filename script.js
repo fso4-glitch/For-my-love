@@ -66,7 +66,7 @@ document.getElementById("finalScreen");
 const music =
 document.getElementById("music");
 
-/* BOTÕES */
+/* BOTÃO INÍCIO */
 document.getElementById("startBtn")
 .addEventListener("click", () => {
 
@@ -182,7 +182,7 @@ function iniciarContagem(){
 
 }
 
-/* SIM */
+/* BOTÃO SIM */
 document.getElementById("yesBtn")
 .addEventListener("click", () => {
 
@@ -194,21 +194,24 @@ document.getElementById("yesBtn")
 
 });
 
-/* NÃO */
-document.getElementById("noText")
-.innerHTML = `
-e se você ainda não estiver pronta agora,
-relaxa amor ❤️
-<br><br>
+/* TEXTO DO NÃO */
+document.getElementById("noBtn")
+.addEventListener("click", () => {
 
-eu só queria
-que você soubesse
-o quanto você é especial pra mim ✨
-`;
+  document.getElementById("noText")
+  .innerHTML = `
+  e se você ainda não estiver pronta agora,
+  relaxa amor ❤️
+  <br><br>
+
+  eu só queria
+  que você soubesse
+  o quanto você é especial pra mim ✨
+  `;
 
 });
 
-/* CHUVA */
+/* CHUVA DE CORAÇÕES */
 function chuva(){
 
   setInterval(() => {
