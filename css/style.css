@@ -45,6 +45,7 @@ body{
 
 }
 
+/* ESTRELAS */
 .particles::before{
   content:"";
 
@@ -73,6 +74,7 @@ body{
 
 }
 
+/* TELAS */
 .screen{
   position:absolute;
 
@@ -96,6 +98,7 @@ body{
   display:flex;
 }
 
+/* GLASS */
 .glass{
   width:100%;
   max-width:500px;
@@ -116,6 +119,7 @@ body{
   animation:fade 1s ease;
 }
 
+/* TEXTOS */
 h1{
   font-size:2rem;
   line-height:1.5;
@@ -137,6 +141,7 @@ p{
   color:rgba(255,255,255,0.9);
 }
 
+/* BOTÕES */
 button{
   margin-top:30px;
 
@@ -171,6 +176,7 @@ button:hover{
   border:1px solid rgba(255,255,255,0.1);
 }
 
+/* IMAGENS */
 .movie-img,
 .couple-img{
   width:85%;
@@ -195,6 +201,7 @@ button:hover{
   justify-content:center;
 }
 
+/* CONTAGEM */
 #count{
   font-size:8rem;
 
@@ -223,6 +230,7 @@ button:hover{
 
 }
 
+/* TEXTO DIGITANDO */
 #typing::after{
   content:"|";
   animation:blink 1s infinite;
@@ -244,6 +252,7 @@ button:hover{
 
 }
 
+/* ANIMAÇÃO */
 @keyframes fade{
 
   from{
@@ -258,8 +267,8 @@ button:hover{
 
 }
 
-.whats-btn,
-.insta-btn{
+/* BOTÃO WHATSAPP */
+.whats-btn{
   display:inline-block;
 
   margin-top:25px;
@@ -274,30 +283,20 @@ button:hover{
 
   font-weight:600;
 
-  transition:0.3s;
-}
-
-.whats-btn{
   background:
   linear-gradient(135deg,#25d366,#1ebe5d);
 
   box-shadow:
   0 0 20px rgba(37,211,102,0.4);
+
+  transition:0.3s;
 }
 
-.insta-btn{
-  background:
-  linear-gradient(135deg,#ff4da6,#c13584);
-
-  box-shadow:
-  0 0 20px rgba(255,77,166,0.4);
-}
-
-.whats-btn:hover,
-.insta-btn:hover{
+.whats-btn:hover{
   transform:scale(1.05);
 }
 
+/* RESPONSIVO */
 @media(max-width:600px){
 
   body{

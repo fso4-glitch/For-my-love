@@ -1,3 +1,4 @@
+/* TEXTO DIGITANDO */
 const typing =
 document.getElementById("typing");
 
@@ -36,6 +37,7 @@ function escrever(){
 
 escrever();
 
+/* TELAS */
 const screen1 =
 document.getElementById("screen1");
 
@@ -60,6 +62,7 @@ document.getElementById("proposalScreen");
 const finalScreen =
 document.getElementById("finalScreen");
 
+/* BOTÕES */
 document.getElementById("startBtn")
 .addEventListener("click", () => {
 
@@ -107,6 +110,7 @@ document.getElementById("countBtn")
 
 });
 
+/* CONTAGEM */
 function iniciarContagem(){
 
   const count =
@@ -145,8 +149,15 @@ function iniciarContagem(){
 
 }
 
-document.getElementById("yesBtn")
-.addEventListener("click", () => {
+/* BOTÕES WHATSAPP */
+const yesBtn =
+document.getElementById("yesBtn");
+
+const noBtn =
+document.getElementById("noBtn");
+
+/* SIM */
+yesBtn.addEventListener("click", () => {
 
   proposalScreen.classList.remove("active");
 
@@ -154,8 +165,46 @@ document.getElementById("yesBtn")
 
   chuva();
 
+  const btn =
+  document.createElement("a");
+
+  btn.href =
+  "https://wa.me/5533997001131?text=eu%20aceito%20namorar%20com%20vc%20amor%20%E2%9D%A4%EF%B8%8F";
+
+  btn.target = "_blank";
+
+  btn.className =
+  "whats-btn";
+
+  btn.innerHTML =
+  "se você aceita aperta aqui 💖";
+
+  finalScreen.appendChild(btn);
+
 });
 
+/* NÃO */
+noBtn.addEventListener("click", () => {
+
+  const btn =
+  document.createElement("a");
+
+  btn.href =
+  "https://wa.me/5533997001131?text=amor%20eu%20ainda%20n%C3%A3o%20estou%20pronta%20agora%20%E2%9D%A4%EF%B8%8F";
+
+  btn.target = "_blank";
+
+  btn.className =
+  "whats-btn";
+
+  btn.innerHTML =
+  "se você acha que não é agora aperta aqui 🥺";
+
+  proposalScreen.appendChild(btn);
+
+});
+
+/* CHUVA */
 function chuva(){
 
   setInterval(() => {
@@ -192,6 +241,7 @@ function chuva(){
 
 }
 
+/* ANIMAÇÃO */
 const style =
 document.createElement("style");
 
