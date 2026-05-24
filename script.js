@@ -169,8 +169,7 @@ yesBtn.addEventListener("click", () => {
   document.createElement("a");
 
   btn.href =
-  "https://wa.me/5533997001131?text=eu%20aceito%20namorar%20com%20vc%20amor%20%E2%9D%A4%EF%B8%8F";
-
+ href="https://wa.me/5533997001131?text=eu%20aceito%20simm%20meu%20amor%20❤️"
   btn.target = "_blank";
 
   btn.className =
