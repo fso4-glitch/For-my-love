@@ -76,24 +76,13 @@ document.getElementById("next1")
 
   screen3.classList.add("active");
 
-  /* COMEÇA A MÚSICA */
-  music.volume = 0;
-
   music.currentTime = 0;
 
-music.play()
-.then(() => {
+  music.play()
+  .catch(() => {});
 
-  console.log("Música tocando ❤️");
+  music.volume = 0;
 
-})
-.catch((err) => {
-
-  console.log("Erro ao tocar:", err);
-
-});
-
-  /* FADE */
   let volume = 0;
 
   const fade = setInterval(() => {
@@ -114,7 +103,7 @@ music.play()
 
 });
 
-/* MÚSICA -> FOTOS */
+/* MÚSICA -> FOTO */
 document.getElementById("next2")
 .addEventListener("click", () => {
 
@@ -124,7 +113,7 @@ document.getElementById("next2")
 
 });
 
-/* FOTOS -> TEXTO */
+/* FOTO -> TEXTO */
 document.getElementById("next3")
 .addEventListener("click", () => {
 
@@ -154,6 +143,8 @@ function iniciarContagem(){
 
   let numero = 3;
 
+  count.innerHTML = numero;
+
   const intervalo =
   setInterval(() => {
 
@@ -168,26 +159,6 @@ function iniciarContagem(){
       clearInterval(intervalo);
 
       count.innerHTML = "❤️";
-
-      /* MÚSICA AUMENTA */
-      let volume = music.volume;
-
-      const fade =
-      setInterval(() => {
-
-        if(volume < 1){
-
-          volume += 0.05;
-
-          music.volume = volume;
-
-        }else{
-
-          clearInterval(fade);
-
-        }
-
-      },200);
 
       setTimeout(() => {
 
@@ -286,27 +257,3 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
-
-/* CARROSSEL */
-const slides =
-document.querySelectorAll(".slide");
-
-let current = 0;
-
-setInterval(() => {
-
-  slides[current]
-  .classList.remove("active");
-
-  current++;
-
-  if(current >= slides.length){
-
-    current = 0;
-
-  }
-
-  slides[current]
-  .classList.add("active");
-
-},3000);
