@@ -263,16 +263,16 @@ style.innerHTML = `
 
 document.head.appendChild(style);
 
-/* BOTÃO WHATSAPP NÃO */
+const noText =
+document.getElementById("noText");
+
 const noWhatsappBtn =
 document.getElementById("noWhatsappBtn");
 
-/* ESCONDER NO COMEÇO */
-noWhatsappBtn.style.display = "none";
-
-/* NÃO */
 document.getElementById("noBtn")
 .addEventListener("click", () => {
+
+  noText.style.display = "block";
 
   noWhatsappBtn.style.display = "block";
 
