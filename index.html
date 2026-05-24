@@ -1,69 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Você ❤️</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedido de Namoro ❤️</title>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="stars"></div>
+  <!-- ESTRELAS -->
+  <div class="stars"></div>
 
-<div class="container" id="inicio">
-    <h1>Tenho algo muito especial pra te mostrar ❤️</h1>
-    <p>clica aqui e confia em mim ✨</p>
-   <button onclick="abrirCarta()">Abrir</button>
-</div>
+  <!-- TELA 1 -->
+  <section class="screen active" id="screen1">
+    <div class="glass-card fade-up">
+      <h1>Tenho algo muito especial pra te mostrar ❤️</h1>
+      <p>clica aqui e confia em mim ✨</p>
 
-<div class="container hidden" id="pedido">
-    <img src="foto.jpg" class="foto">
-
-    <h1>Desde que você apareceu...</h1>
-
-    <p class="texto">
-        meus dias ficaram mais leves,
-        meus sorrisos mais sinceros
-        e meu coração começou a imaginar
-        um futuro bonito ao seu lado ❤️
-    </p>
-
-    <h2>Quer namorar comigo?</h2>
-
-    <div>
-        <button id="sim" onclick="respostaSim()">SIM 💗</button>
-        <button id="nao" onclick="respostaNao()">NÃO 🥺</button>
-        <div id="resposta"></div>
+      <button id="openBtn">Abrir</button>
     </div>
-</div>
+  </section>
 
-<div class="container hidden" id="final">
-    <h1>Você disse sim 💜</h1>
+  <!-- TELA 2 -->
+  <section class="screen" id="screen2">
+    <div class="glass-card romantic-card fade-up">
 
-    <p class="texto">
-desde o momento que você entrou na minha vida,
-meus dias ficaram mais bonitos.
+      <img src="foto.jpg" alt="Nossa foto" class="photo" />
 
-teu sorriso tem um jeito de acalmar tudo.
+      <p class="romantic-text">
+        Desde que você apareceu... <br><br>
 
-eu não quero viver só momentos bonitos com você...
-quero viver uma história inteira.
+        meus dias ficaram mais leves, <br>
+        meus sorrisos mais sinceros <br>
+        e meu coração começou a imaginar <br>
+        um futuro bonito ao seu lado ❤️
+      </p>
 
-quero te apoiar,
-cuidar de você
-e construir memórias lindas juntos ❤️
+      <h2 class="question">Quer namorar comigo?</h2>
 
-obrigado por existir.
+      <div class="buttons">
+        <button class="yes-btn" id="yesBtn">SIM 💗</button>
+        <button class="no-btn" id="noBtn">NÃO 🥺</button>
+      </div>
 
-eu gosto de você de um jeito muito verdadeiro
-e prometo fazer isso valer a pena ✨
-    </p>
+      <p class="no-message" id="noMessage">
+        talvez você ainda não esteja pronta... <br>
+        e eu respeito totalmente isso. <br>
+        o carinho que sinto por você continua aqui ✨
+      </p>
 
-    <audio id="musica" controls>
-        <source src="musica.mp3" type="audio/mpeg">
-    </audio>
-</div>
+    </div>
+  </section>
 
-<script src="script.js"></script>
+  <!-- TELA 3 -->
+  <section class="screen" id="screen3">
+    <div class="glass-card final-card fade-up">
+
+      <h1 class="yes-title">Você disse sim 💜</h1>
+
+      <p class="final-text">
+        desde o momento que você entrou na minha vida,
+        meus dias ficaram mais bonitos. <br><br>
+
+        teu sorriso tem um jeito de acalmar tudo. <br><br>
+
+        eu não quero viver só momentos bonitos com você...
+        quero viver uma história inteira. <br><br>
+
+        quero te apoiar,
+        cuidar de você
+        e construir memórias lindas juntos ❤️ <br><br>
+
+        obrigado por existir. <br><br>
+
+        eu gosto de você de um jeito muito verdadeiro
+        e prometo fazer isso valer a pena ✨
+      </p>
+
+      <audio id="musicPlayer" controls>
+        <source src="musica.mp3" type="audio/mp3" />
+      </audio>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>

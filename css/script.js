@@ -1,22 +1,36 @@
-function abrirCarta() {
-    document.getElementById("inicio").style.display = "none";
-    document.getElementById("pedido").style.display = "block";
-}
+const screen1 = document.getElementById("screen1");
+const screen2 = document.getElementById("screen2");
+const screen3 = document.getElementById("screen3");
 
-function respostaSim() {
-    document.getElementById("pedido").style.display = "none";
-    document.getElementById("final").style.display = "block";
+const openBtn = document.getElementById("openBtn");
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
 
-    document.getElementById("musica").play();
-}
+const noMessage = document.getElementById("noMessage");
 
-function respostaNao() {
-    document.getElementById("resposta").innerHTML = `
-        <h1>Tá tudo bem 🤍</h1>
-        <p>
-        talvez você ainda não esteja pronta...
-        e eu respeito totalmente isso.
-        o carinho que sinto por você continua aqui ✨
-        </p>
-    `;
-}
+const musicPlayer = document.getElementById("musicPlayer");
+
+/* ABRIR TELA 2 */
+openBtn.addEventListener("click", () => {
+
+  screen1.classList.remove("active");
+  screen2.classList.add("active");
+
+});
+
+/* BOTÃO SIM */
+yesBtn.addEventListener("click", () => {
+
+  screen2.classList.remove("active");
+  screen3.classList.add("active");
+
+  musicPlayer.play();
+
+});
+
+/* BOTÃO NÃO */
+noBtn.addEventListener("click", () => {
+
+  noMessage.style.display = "block";
+
+});
