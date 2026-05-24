@@ -3,12 +3,20 @@ const typing =
 document.getElementById("typing");
 
 const text = `
-24 de dezembro de 2025...
+24 de dezembro de 2025…
 
-eu ainda não sabia...
-mas naquele dia
-eu encontraria alguém
-que mudaria tudo ❤️
+eu ainda não fazia ideia
+que naquele dia
+Deus colocaria na minha vida
+a pessoa que mudaria completamente meu coração ❤️
+
+porque foi ali
+que eu encontrei alguém
+que me trouxe paz,
+felicidade,
+amor
+e a vontade de viver
+um futuro inteiro ao lado dela ✨
 `;
 
 let i = 0;
@@ -187,15 +195,16 @@ document.getElementById("yesBtn")
 });
 
 /* NÃO */
-document.getElementById("noBtn")
-.addEventListener("click", () => {
+document.getElementById("noText")
+.innerHTML = `
+e se você ainda não estiver pronta agora,
+relaxa amor ❤️
+<br><br>
 
-  document.getElementById("noText")
-  .innerHTML = `
-  talvez você ainda não esteja pronta...
-  <br><br>
-  e eu respeito totalmente isso ❤️
-  `;
+eu só queria
+que você soubesse
+o quanto você é especial pra mim ✨
+`;
 
 });
 
