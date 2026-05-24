@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pra você ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<section class="hero" id="step1">
+    <h1 id="title1"></h1>
+    <p id="text1"></p>
+    <button onclick="next()">Continuar</button>
+</section>
+
+<section class="section hidden" id="step2">
+    <h1 id="title2"></h1>
+    <p id="text2"></p>
+    <button onclick="next2()">Continuar</button>
+</section>
+
+<section class="section hidden final" id="step3">
+    <h2>Você quer namorar comigo?</h2>
+
+    <div class="buttons">
+        <button class="yes" onclick="yes()">SIM ❤️</button>
+        <button class="no" onclick="no()">NÃO 😅</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
