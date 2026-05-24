@@ -3,38 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pra você ❤️</title>
-
+<title>Uma pergunta pra você ❤️</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="background"></div>
+<div class="stars"></div>
 
-<section class="hero" id="step1">
-    <h1 id="title1"></h1>
-    <p id="text1"></p>
-    <button onclick="next()">Continuar</button>
-</section>
+<div class="container" id="inicio">
+<h1>Tenho algo muito especial pra te mostrar ❤️</h1>
+<p>clica aqui e confia em mim ✨</p>
+<button onclick="abrirPedido()">Abrir</button>
+</div>
 
-<section class="section hidden" id="step2">
-    <h1 id="title2"></h1>
-    <p id="text2"></p>
-    <button onclick="next2()">Continuar</button>
-</section>
+<div class="container hidden" id="pedido">
+<img src="foto.jpg" class="foto">
 
-<section class="section hidden final" id="step3">
-    <h2>Você quer namorar comigo?</h2>
+<h1>Desde que você apareceu...</h1>
 
-    <div class="buttons">
-        <button class="yes" onclick="yes()">SIM ❤️</button>
-        <button class="no" onclick="no()">NÃO 😅</button>
-    </div>
-</section>
+<p>
+meus dias ficaram mais leves,  
+meus sorrisos mais sinceros  
+e meu coração começou a imaginar um futuro bonito ao seu lado ❤️
+</p>
+
+<h2>Quer namorar comigo?</h2>
+
+<div class="botoes">
+<button id="sim" onclick="aceitou()">SIM ❤️</button>
+<button id="nao" onclick="recusou()">NÃO 😶</button>
+</div>
+</div>
+
+<div class="container hidden" id="final">
+<h1>Você disse sim ❤️</h1>
+
+<p class="texto">
+desde o momento que você entrou na minha vida,  
+meus dias ficaram mais bonitos.
+
+teu sorriso tem um jeito de acalmar tudo,  
+teu jeito me faz querer ser melhor todos os dias.
+
+eu não quero viver só momentos bonitos com você...
+quero viver uma história inteira.
+
+quero te fazer sorrir nos dias difíceis,
+te apoiar, cuidar de você
+e construir memórias lindas juntos ❤️
+
+obrigado por existir.
+
+eu gosto de você de um jeito muito verdadeiro
+e prometo fazer isso valer a pena ✨
+</p>
+
+<audio id="musica" controls autoplay>
+<source src="musica.mp3">
+</audio>
+
+</div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
