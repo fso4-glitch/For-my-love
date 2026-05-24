@@ -14,14 +14,16 @@ function recusou(){
 document.getElementById("pedido").innerHTML=`
 <h1>Talvez você ainda não esteja pronta ❤️</h1>
 
-<p style="font-size:18px;line-height:1.8;">
+<p class="texto">
 e tá tudo bem...
 
 eu respeito totalmente sua decisão.
 
-o mais importante pra mim sempre vai ser te ver feliz ✨
+o mais importante pra mim
+sempre vai ser te ver feliz ✨
 
-mas precisava te mostrar o quanto você é especial pra mim.
+mas precisava te mostrar
+o quanto você é especial pra mim.
 </p>
 
 <button onclick="location.reload()">Voltar</button>

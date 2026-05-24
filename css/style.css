@@ -1,32 +1,33 @@
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial,sans-serif;
 background:linear-gradient(-45deg,#1a001f,#ff4da6,#ff85c1,#4a00e0);
 background-size:400% 400%;
-animation:bg 12s infinite ease;
+animation:bg 12s ease infinite;
 color:white;
 text-align:center;
 overflow:hidden;
 }
 
 @keyframes bg{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 .stars{
-position:absolute;
+position:fixed;
 width:100%;
 height:100%;
 background:url("https://i.imgur.com/YKY28eT.png");
 opacity:.25;
 animation:move 100s linear infinite;
+z-index:-1;
 }
 
 @keyframes move{
-from{background-position:0 0}
-to{background-position:1000px 1000px}
+from{background-position:0 0;}
+to{background-position:1000px 1000px;}
 }
 
 .container{
@@ -35,8 +36,8 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 width:90%;
-max-width:550px;
-background:rgba(255,255,255,.1);
+max-width:600px;
+background:rgba(255,255,255,.12);
 backdrop-filter:blur(15px);
 padding:35px;
 border-radius:25px;
@@ -58,7 +59,7 @@ transition:.3s;
 }
 
 button:hover{
-transform:scale(1.1);
+transform:scale(1.08);
 }
 
 #sim{
@@ -79,7 +80,12 @@ box-shadow:0 0 25px rgba(255,255,255,.5);
 }
 
 .texto{
+white-space:pre-line;
 font-size:18px;
 line-height:1.8;
-white-space:pre-line;
+}
+
+audio{
+margin-top:20px;
+width:90%;
 }
