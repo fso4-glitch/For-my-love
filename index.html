@@ -39,7 +39,7 @@
   <!-- TELA 2 -->
   <section class="screen" id="screen2">
 
-    <div class="glass">
+    <div class="glass movie-card">
 
       <img src="filme.jpg" class="movie-img">
 
@@ -69,7 +69,7 @@
   <!-- TELA 3 -->
   <section class="screen" id="screen3">
 
-    <div class="glass">
+    <div class="glass music-card">
 
       <h1>
         🎵 essa música me lembra você
@@ -97,7 +97,7 @@
   <!-- TELA 4 -->
   <section class="screen" id="screen4">
 
-    <div class="glass">
+    <div class="glass photo-card">
 
       <div class="slider">
 
@@ -125,7 +125,7 @@
   <!-- TELA 5 -->
   <section class="screen" id="screen5">
 
-    <div class="glass">
+    <div class="glass text-card">
 
       <h1>
         e no meio de tudo isso...
@@ -146,7 +146,7 @@
   <!-- CONTAGEM -->
   <section class="screen" id="countScreen">
 
-    <div class="glass">
+    <div class="count-container">
 
       <p>
         faltam poucos segundos
@@ -164,9 +164,9 @@
   <!-- PEDIDO -->
   <section class="screen" id="proposalScreen">
 
-    <div class="glass">
+    <div class="glass proposal-card">
 
-      <h1>
+      <h1 class="proposal-title">
         Quer namorar comigo? ❤️
       </h1>
 
@@ -182,19 +182,32 @@
 
       </div>
 
-      <p>
+      <!-- TEXTO NÃO -->
+      <p id="noText" style="display:none;">
+
         e se você ainda não estiver pronta agora,
         relaxa amor ❤️
         <br><br>
 
-        eu só queria
-        que você soubesse
+        eu só queria que você soubesse
         o quanto você é especial pra mim ✨
         <br><br>
 
         independente da resposta...
         você sempre vai ser alguém muito importante pra mim 💜
+
       </p>
+
+      <!-- BOTÃO WHATSAPP NÃO -->
+      <a
+        id="noWhatsappBtn"
+        href="https://wa.me/5533997001131?text=acho%20que%20ainda%20n%C3%A3o%20%C3%A9%20agora%20🥺"
+        target="_blank"
+        class="whatsapp-btn"
+        style="display:none;"
+      >
+        se você acha que não é agora aperta aqui 🥺
+      </a>
 
     </div>
 
@@ -203,13 +216,14 @@
   <!-- FINAL -->
   <section class="screen" id="finalScreen">
 
-    <div class="glass">
+    <div class="glass final-card">
 
       <h1>
         você disse sim 💜
       </h1>
 
       <p>
+
         vc não faz ideia
         do quanto eu sonhei com esse momento amor…
         <br><br>
@@ -242,7 +256,17 @@
         <br><br>
 
         eu te amo muito minha menina 💜
+
       </p>
+
+      <!-- BOTÃO WHATSAPP SIM -->
+      <a
+        href="https://wa.me/5533997001131?text=eu%20aceito%20namorar%20com%20vc%20❤️"
+        target="_blank"
+        class="whatsapp-btn"
+      >
+        se você aceita aperta aqui 💖
+      </a>
 
     </div>
 

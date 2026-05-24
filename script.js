@@ -262,3 +262,18 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
+
+/* BOTÃO WHATSAPP NÃO */
+const noWhatsappBtn =
+document.getElementById("noWhatsappBtn");
+
+/* ESCONDER NO COMEÇO */
+noWhatsappBtn.style.display = "none";
+
+/* NÃO */
+document.getElementById("noBtn")
+.addEventListener("click", () => {
+
+  noWhatsappBtn.style.display = "block";
+
+});
