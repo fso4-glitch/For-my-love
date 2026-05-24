@@ -1,4 +1,3 @@
-/* TEXTO DIGITANDO */
 const typing =
 document.getElementById("typing");
 
@@ -38,58 +37,83 @@ function escrever(){
 escrever();
 
 /* TELAS */
-const screen1 = document.getElementById("screen1");
-const screen2 = document.getElementById("screen2");
-const screen3 = document.getElementById("screen3");
-const screen4 = document.getElementById("screen4");
-const screen5 = document.getElementById("screen5");
-const countScreen = document.getElementById("countScreen");
-const proposalScreen = document.getElementById("proposalScreen");
-const finalScreen = document.getElementById("finalScreen");
+const screen1 =
+document.getElementById("screen1");
 
-/* MÚSICA */
+const screen2 =
+document.getElementById("screen2");
+
+const screen3 =
+document.getElementById("screen3");
+
+const screen4 =
+document.getElementById("screen4");
+
+const screen5 =
+document.getElementById("screen5");
+
+const countScreen =
+document.getElementById("countScreen");
+
+const proposalScreen =
+document.getElementById("proposalScreen");
+
+const finalScreen =
+document.getElementById("finalScreen");
+
+/* MUSICA */
 const music =
 document.getElementById("music");
 
-/* BOTÕES */
+/* BOTAO 1 */
 document.getElementById("startBtn")
 .addEventListener("click", () => {
 
   screen1.classList.remove("active");
+
   screen2.classList.add("active");
 
 });
 
+/* FILME -> MUSICA */
 document.getElementById("next1")
 .addEventListener("click", () => {
 
   screen2.classList.remove("active");
+
   screen3.classList.add("active");
 
-  music.play().catch(() => {});
+  music.play()
+  .catch(() => {});
 
 });
 
+/* MUSICA -> FOTO */
 document.getElementById("next2")
 .addEventListener("click", () => {
 
   screen3.classList.remove("active");
+
   screen4.classList.add("active");
 
 });
 
+/* FOTO -> TEXTO */
 document.getElementById("next3")
 .addEventListener("click", () => {
 
   screen4.classList.remove("active");
+
   screen5.classList.add("active");
 
 });
 
+/* TEXTO -> CONTAGEM */
 document.getElementById("countBtn")
 .addEventListener("click", () => {
 
   screen5.classList.remove("active");
+
   countScreen.classList.add("active");
 
   iniciarContagem();
@@ -124,6 +148,7 @@ function iniciarContagem(){
       setTimeout(() => {
 
         countScreen.classList.remove("active");
+
         proposalScreen.classList.add("active");
 
       },1500);
@@ -139,6 +164,7 @@ document.getElementById("yesBtn")
 .addEventListener("click", () => {
 
   proposalScreen.classList.remove("active");
+
   finalScreen.classList.add("active");
 
   chuva();

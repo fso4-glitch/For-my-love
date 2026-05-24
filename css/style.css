@@ -115,8 +115,6 @@ body{
   0 0 35px rgba(255,0,140,0.2);
 
   animation:fade 1s ease;
-
-  overflow:hidden;
 }
 
 /* TEXTO */
@@ -163,17 +161,11 @@ button{
   transition:0.3s;
 
   box-shadow:
-  0 0 15px rgba(255,77,166,0.35);
-
-  position:relative;
-  z-index:2;
+  0 0 20px rgba(255,77,166,0.5);
 }
 
 button:hover{
   transform:scale(1.05);
-
-  box-shadow:
-  0 0 25px rgba(255,77,166,0.55);
 }
 
 #noBtn{
@@ -199,12 +191,6 @@ button:hover{
 
   box-shadow:
   0 0 25px rgba(255,255,255,0.12);
-
-  transition:0.4s;
-}
-
-.movie-img:hover{
-  transform:scale(1.03);
 }
 
 /* FOTO */
@@ -232,12 +218,6 @@ button:hover{
 
   box-shadow:
   0 0 25px rgba(255,255,255,0.12);
-
-  transition:0.4s;
-}
-
-.couple-img:hover{
-  transform:scale(1.03);
 }
 
 /* CONTAGEM */
@@ -291,39 +271,6 @@ button:hover{
 
 }
 
-/* BOTÃO INSTA */
-.insta-btn{
-
-  display:inline-block;
-
-  margin-top:25px;
-
-  padding:14px 30px;
-
-  border-radius:40px;
-
-  text-decoration:none;
-
-  color:white;
-
-  font-weight:600;
-
-  background:
-  linear-gradient(135deg,#ff4da6,#c13584,#833ab4);
-
-  box-shadow:
-  0 0 20px rgba(255,77,166,0.4);
-
-  transition:0.3s;
-
-}
-
-.insta-btn:hover{
-
-  transform:scale(1.05);
-
-}
-
 /* ANIMAÇÃO */
 @keyframes fade{
 
@@ -341,6 +288,10 @@ button:hover{
 
 /* RESPONSIVO */
 @media(max-width:600px){
+
+  .glass{
+    padding:30px 20px;
+  }
 
   h1{
     font-size:1.5rem;
