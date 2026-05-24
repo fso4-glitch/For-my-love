@@ -36,7 +36,6 @@ function escrever(){
 
 escrever();
 
-/* TELAS */
 const screen1 =
 document.getElementById("screen1");
 
@@ -61,11 +60,9 @@ document.getElementById("proposalScreen");
 const finalScreen =
 document.getElementById("finalScreen");
 
-/* MUSICA */
 const music =
 document.getElementById("music");
 
-/* BOTAO 1 */
 document.getElementById("startBtn")
 .addEventListener("click", () => {
 
@@ -75,7 +72,6 @@ document.getElementById("startBtn")
 
 });
 
-/* FILME -> MUSICA */
 document.getElementById("next1")
 .addEventListener("click", () => {
 
@@ -88,7 +84,6 @@ document.getElementById("next1")
 
 });
 
-/* MUSICA -> FOTO */
 document.getElementById("next2")
 .addEventListener("click", () => {
 
@@ -98,7 +93,6 @@ document.getElementById("next2")
 
 });
 
-/* FOTO -> TEXTO */
 document.getElementById("next3")
 .addEventListener("click", () => {
 
@@ -108,7 +102,6 @@ document.getElementById("next3")
 
 });
 
-/* TEXTO -> CONTAGEM */
 document.getElementById("countBtn")
 .addEventListener("click", () => {
 
@@ -120,7 +113,6 @@ document.getElementById("countBtn")
 
 });
 
-/* CONTAGEM */
 function iniciarContagem(){
 
   const count =
@@ -159,7 +151,6 @@ function iniciarContagem(){
 
 }
 
-/* SIM */
 document.getElementById("yesBtn")
 .addEventListener("click", () => {
 
@@ -171,7 +162,6 @@ document.getElementById("yesBtn")
 
 });
 
-/* NÃO */
 document.getElementById("noBtn")
 .addEventListener("click", () => {
 
@@ -184,11 +174,14 @@ document.getElementById("noBtn")
   eu só queria
   que você soubesse
   o quanto você é especial pra mim ✨
+  <br><br>
+
+  independente da resposta…
+  você sempre vai ser alguém muito importante pra mim 💜
   `;
 
 });
 
-/* CHUVA */
 function chuva(){
 
   setInterval(() => {
@@ -225,7 +218,6 @@ function chuva(){
 
 }
 
-/* ANIMAÇÃO */
 const style =
 document.createElement("style");
 
