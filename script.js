@@ -169,7 +169,7 @@ yesBtn.addEventListener("click", () => {
   document.createElement("a");
 
   btn.href =
- href="https://wa.me/5533997001131?text=eu%20aceito%20simm%20meu%20amor%20❤️"
+ href="https://wa.me/5533997001131?text=Eu%20aceito%20simm%20meu%20amor%20❤️"
   btn.target = "_blank";
 
   btn.className =
@@ -189,7 +189,7 @@ noBtn.addEventListener("click", () => {
   document.createElement("a");
 
   btn.href =
-  "https://wa.me/5533997001131?text=amor%20eu%20ainda%20n%C3%A3o%20estou%20pronta%20agora%20%E2%9D%A4%EF%B8%8F";
+  "https://wa.me/5533997001131?text=Amor%20eu%20ainda%20n%C3%A3o%20estou%20pronta%20agora%20%E2%9D%A4%EF%B8%8F";
 
   btn.target = "_blank";
 
