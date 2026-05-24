@@ -1,142 +1,134 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Pedido de Namoro ❤️</title>
+  <title>Para Você ❤️</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-  <!-- ESTRELAS -->
-  <div class="stars"></div>
+  <!-- FUNDO -->
+  <div class="background"></div>
+
+  <!-- PARTÍCULAS -->
+  <div class="particles"></div>
 
   <!-- TELA 1 -->
-  <section class="screen active" id="screen1">
-    <div class="glass-card fade-up">
+  <section id="inicio" class="screen active">
 
-      <h1>
-        Tenho algo muito especial pra te mostrar ❤️
+    <div class="glass">
+
+      <h1 class="typing">
+        tem algumas coisas que eu nunca consegui te explicar direito...
       </h1>
 
-      <p>
-        clica aqui e confia em mim ✨
-      </p>
-
-      <button id="openBtn">
-        Abrir
+      <button id="startBtn">
+        descobrir ✨
       </button>
 
     </div>
+
   </section>
 
   <!-- TELA 2 -->
-  <section class="screen" id="screen2">
-    <div class="glass-card romantic-card fade-up">
+  <section id="universo" class="screen">
 
-      <!-- FOTO -->
-      <img
-        src="foto.jpg"
-        alt="Nossa foto"
-        class="photo"
-      />
+    <h1 class="title">
+      toque nas estrelas ❤️
+    </h1>
 
-      <!-- TEXTO -->
-      <p class="romantic-text">
-        Desde que você apareceu...
-        <br><br>
+    <div class="stars-container">
 
-        meus dias ficaram mais leves,
-        <br>
+      <div class="star" data-text="você virou a parte mais leve dos meus dias ✨">
+        ⭐
+      </div>
 
-        meus sorrisos mais sinceros
-        <br>
+      <div class="star" data-text="você me faz sorrir mesmo nos dias ruins 💜">
+        ⭐
+      </div>
 
-        e meu coração começou a imaginar
-        <br>
+      <div class="star" data-text="eu comecei a imaginar um futuro bonito com você ❤️">
+        ⭐
+      </div>
 
-        um futuro bonito ao seu lado ❤️
+      <div class="star special" id="specialStar">
+        ⭐
+      </div>
+
+    </div>
+
+    <!-- CARTA -->
+    <div id="messageBox" class="glass hidden">
+
+      <p id="messageText"></p>
+
+      <button id="closeBtn">
+        fechar
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- TELA FINAL -->
+  <section id="finalScreen" class="screen">
+
+    <div class="glass final-card">
+
+      <h1>
+        e foi aí que eu percebi...
+      </h1>
+
+      <p>
+        que eu não queria sentir tudo isso sozinho ❤️
       </p>
 
-      <!-- PERGUNTA -->
-      <h2 class="question">
+      <h2>
         Quer namorar comigo?
       </h2>
 
-      <!-- BOTÕES -->
       <div class="buttons">
 
-        <button class="yes-btn" id="yesBtn">
+        <button id="yesBtn">
           SIM 💗
         </button>
 
-        <button class="no-btn" id="noBtn">
+        <button id="noBtn">
           NÃO 🥺
         </button>
 
       </div>
 
-      <!-- MENSAGEM NÃO -->
-      <p class="no-message" id="noMessage">
-        talvez você ainda não esteja pronta...
-        <br>
-
-        e eu respeito totalmente isso.
-        <br>
-
-        o carinho que sinto por você continua aqui ✨
-      </p>
+      <p id="noText"></p>
 
     </div>
+
   </section>
 
-  <!-- TELA 3 -->
-  <section class="screen" id="screen3">
-    <div class="glass-card final-card fade-up">
+  <!-- TELA SIM -->
+  <section id="yesScreen" class="screen">
 
-      <h1 class="yes-title">
-        Você disse sim 💜
+    <div class="glass final-love">
+
+      <h1>
+        você disse sim 💜
       </h1>
 
-      <p class="final-text">
-
-        desde o momento que você entrou na minha vida,
-        meus dias ficaram mais bonitos.
-        <br><br>
-
-        teu sorriso tem um jeito de acalmar tudo.
-        <br><br>
-
-        eu não quero viver só momentos bonitos com você...
-        quero viver uma história inteira.
-        <br><br>
-
-        quero te apoiar,
-        cuidar de você
-        e construir memórias lindas juntos ❤️
-        <br><br>
-
-        obrigado por existir.
-        <br><br>
-
-        eu gosto de você de um jeito muito verdadeiro
-        e prometo fazer isso valer a pena ✨
-
+      <p>
+        agora oficialmente você é a melhor parte da minha vida ✨
       </p>
 
-      <!-- MÚSICA -->
-      <audio id="musicPlayer" controls>
-        <source src="musica.mp3" type="audio/mp3" />
+      <audio controls autoplay loop>
+        <source src="musica.mp3" type="audio/mp3">
       </audio>
 
     </div>
+
   </section>
 
-  <!-- JS -->
   <script src="script.js"></script>
 
 </body>
